@@ -1,23 +1,25 @@
 import { storageService } from "../../../services/storage.service.js";
+import { utilService } from '../../../services/util.service.js'
 
 
 export const noteService = {
-    query
+    query,
+    onSaveNote
 }
 const KEY = 'notesDB'
 
 let notes = storageService.loadFromStorage(KEY) || [
     {
         id: "n101",
-        type: "note-txt",
+        type: "note-text",
         isPinned: true,
         info: {
-            txt: "Fullstack Me Baby!"
+            text: "Fullstack Me Baby!"
         }
     },
     {
         id: "n102",
-        type: "note-img",
+        type: "note-image",
         info: {
             url: "http://some-img/me",
             title: "Bobi and Me"
@@ -40,6 +42,46 @@ let notes = storageService.loadFromStorage(KEY) || [
 ];
 
 
-function query() {
+function query(filterBy) {
+    if (filterBy) {
+        const notesToShow = notes.filter(note => {
+            return note.type.includes(filterBy)
+        })
+        return Promise.resolve(notesToShow)
+    }
     return Promise.resolve(notes)
+}
+
+function onSaveNote(noteType, noteToAdd) {
+    console.log(noteType)
+    console.log(noteToAdd)
+    switch (noteType) {
+        case 'text':
+            notes.push(_createTextNote(noteType,noteToAdd))
+            break;
+
+    }
+    _saveNotesToStorage()
+    return Promise.resolve()
+
+}
+
+
+function _createTextNote(noteType,noteInfo) {
+    console.log(noteType,)
+    return {
+        id: utilService.makeId(),
+        type:`note-${noteType}`,
+        isPinned: false,
+        info: noteInfo
+    }
+
+
+
+}
+
+
+
+function _saveNotesToStorage() {
+    storageService.saveToStorage(KEY, notes)
 }
