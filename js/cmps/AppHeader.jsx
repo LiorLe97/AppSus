@@ -5,11 +5,11 @@ const { NavLink, withRouter } = ReactRouterDOM
 
         return (
             <section className="app-header">
-                <h1 onClick={() => this.props.history.push('/')}>Get Paper</h1>
+                <h1 onClick={() => this.props.history.push('/')}>AppSus</h1>
                 <nav>
                     <NavLink exact to="/" >Home</NavLink>
                     <NavLink to="/about" >About</NavLink>
-                    <NavLink to="/book" >Our Books</NavLink>
+                    <NavLink to="/book" >Books</NavLink>
                 </nav>
             </section>
         )
