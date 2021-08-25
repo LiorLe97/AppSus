@@ -10,6 +10,7 @@ const { NavLink, withRouter } = ReactRouterDOM
                     <NavLink exact to="/" >Home</NavLink>
                     <NavLink to="/about" >About</NavLink>
                     <NavLink to="/book" >Books</NavLink>
+                    <NavLink to="/emails" >Emails</NavLink>
                 </nav>
             </section>
         )

@@ -9,7 +9,7 @@ import { BookDetails } from './js/apps/book/pages/BookDetails.jsx';
 import { BookReview } from './js/apps/book/pages/BookReview.jsx';
 import { BookReviewsList } from './js/apps/book/cmps/BookReviewsList.jsx';
 import { AddBook } from './js/apps/book/cmps/AddBook.jsx';
-// import { AddBook } from './js/apps/book/cmps/AddBook.jsx';
+import { MailApp } from './js/apps/mail/pages/MailApp.jsx';
 export function App() {
     return (
         <Router>
@@ -22,7 +22,7 @@ export function App() {
                     <Route path="/book/review/:bookId" component={BookReview} />
                     <Route path="/book/AddBook" component={AddBook} />
                     <Route path="/book/:bookId" component={BookDetails} />
-                    {/* <Route path="/mailApp" component={MailApp} /> */}
+                    <Route path="/emails" component={MailApp} />
                     <Route path="/book" component={BookApp} />
                     <Route path="/about" component={About} />
                     <Route path="/" component={Home} />
