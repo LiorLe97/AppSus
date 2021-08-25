@@ -1,6 +1,6 @@
 import { books } from '../assets/json/books.js'
 import { storageService } from './storage.service.js'
-import {utilService} from './util.service.js'
+import { utilService } from './util.service.js'
 
 export const bookService = {
     query,
@@ -10,7 +10,8 @@ export const bookService = {
     saveReview,
     getBookIdx,
     getBooksFromApi,
-    onSaveBook
+    onSaveBook, 
+    deleteReview
 }
 const KEY = 'bookDB'
 let gBooks = _loadBookFromStorage() || books
@@ -88,7 +89,7 @@ function getBooksFromApi(searchKey) {
     //     console.log('here chached');
     //     return Promise.resolve(dataFromStorage.data)
     // }
-    return  axios.get(`https://www.googleapis.com/books/v1/volumes?q=${searchKey}&key=AIzaSyAmLAB5XFK6umPfY_dKYLvAzUTBdW4ysXs`)
+    return axios.get(`https://www.googleapis.com/books/v1/volumes?q=${searchKey}&key=AIzaSyAmLAB5XFK6umPfY_dKYLvAzUTBdW4ysXs`)
         .then(res => {
             // chachedData.lastReq = Date.now()
             // chachedData.data = res.data
@@ -112,7 +113,7 @@ function _createBook(book) {
         },
         pageCount: book.volumeInfo.pageCount,
         publishedDate: book.volumeInfo.publishedDate,
-        // review: []
+        reviews: []
     }
 }
 
@@ -120,4 +121,11 @@ function onSaveBook(book) {
     gBooks.unshift(_createBook(book))
     _saveBooksToStorage()
     return Promise.resolve()
+}
+
+function deleteReview(book, reviewId) {
+    book.reviews.splice(reviewId, 1)
+    _saveBooksToStorage();
+    return Promise.resolve()
+
 }

@@ -55,6 +55,15 @@ export class BookDetails extends React.Component {
                 this.props.history.push(`/book/${bookId}`)
             })
     }
+    onDeleteReview = (deleteReviewIdx) => {
+        const {book} =this.state;
+        let reviewId = book.reviews.findIndex((review)=>{
+            return deleteReviewIdx === review.id
+        })
+        bookService.deleteReview(book,reviewId)
+        .then(this.loadBook())
+    }
+
 
     render() {
         const { book } = this.state
@@ -64,7 +73,7 @@ export class BookDetails extends React.Component {
                 <h3>{book.title}</h3>
                 <img className="book-img" src={book.thumbnail} />
                 <h5>{this.publishDate()}</h5>
-                {book.listPrice.isOnSale && <img className="sale-img" src="./assets/img/sale.png" />}
+                {book.listPrice.isOnSale && <img className="sale-img" src="../css/assests/imgs/sale.png" />}
                 <p className={this.bookPrice()}>price: {book.listPrice.amount} {book.listPrice.currencyCode}</p>
                 <p>{book.authors.length > 1 ? 'Authors: ' : 'Author: '}{book.authors}</p>
                 <p>{this.pageCount()}</p>
