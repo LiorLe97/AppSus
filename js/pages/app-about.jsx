@@ -29,7 +29,7 @@ export function About() {
                     <img src="../../css/assests/imgs/tal.jpeg" className="about-img" />
                     <div>
                         <h4>Tal Ekroni</h4>
-                        <p>Just created this meme editor go ahead have fun</p>
+                        <p>Just created this meme editor go ahead gibor have fun</p>
                         <div className="socials">
                             <a className="linked" href="#"></a>
                             <a className="git" href="#"></a>
