@@ -1,0 +1,16 @@
+.about {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.about strong {
+    font-size: 30px;
+}
+
+.about p {
+    text-align: center;
+    max-width: 250px;
+}

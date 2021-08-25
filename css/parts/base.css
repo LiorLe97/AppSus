@@ -1,0 +1,11 @@
+body {
+    background-color: skyblue;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0px 0px;
+    padding: 0;
+}
+
+p {
+    margin: 1px;
+    padding: 3px;
+}
