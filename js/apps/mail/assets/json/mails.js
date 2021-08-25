@@ -28,7 +28,7 @@ export const emails =
       id: 'e104',
       subject: 'Hotel vitma!',
       body: 'Hello, we will be glad to get a review for your staying at our hotel. Hope you had a great time',
-      isRead: false,
+      isRead: true,
       sentAt: 1551133930594,
       to: 'momo@momo.com'
     },

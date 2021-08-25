@@ -35,11 +35,16 @@ function _createEmail(email) {
     }
 }
 function query(filterBy) {
-    // if (filterBy) {
-    //     let { inbox, sent, trash, draft } = filterBy
-    //     const emailsToShow=gEmails.filter(email=>)
-
-    // }
+    console.log(filterBy)
+    if (filterBy) {
+        let { txt, isRead } = filterBy
+        const emailsToShow = gEmails.filter(email => {
+            return email.body.includes(txt) && 
+            email.isRead === isRead
+        })
+        return Promise.resolve(emailsToShow)
+        }
+    console.log(filterBy);
     return Promise.resolve(gEmails)
 }
 

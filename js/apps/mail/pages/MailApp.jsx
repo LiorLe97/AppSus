@@ -5,8 +5,9 @@ import { SideBar } from '../cmps/SideBar.jsx';
 export class MailApp extends React.Component {
   state = {
     mails: [],
-    filterBy: null,
+    filterBy:null
   }
+
 
   componentDidMount() {
     this.LoadEmails();
@@ -21,16 +22,20 @@ export class MailApp extends React.Component {
 
 
 
-  onSetFilter = (filterBy) => {
-    this.setState({ filterBy }, this.LoadEmails);
+  onSetFilter = (criteria) => {
+    // this.setState({ filterBy }, this.LoadEmails);
+    this.setState({filterBy:criteria},this.LoadEmails)
   };
+  onGetAllEmails=()=>{
+    this.setState({filterBy:null},this.LoadEmails)
+  }
 
   render() {
-    const { mails } = this.state
+    const { mails, filterBy } = this.state
     return (
       <section className="mail-app">
-        <MailsList mails={mails} history={this.props.history} />
-        <SideBar onSetFilter={this.onSetFilter}/>
+        <MailsList mails={mails} history={this.props.history} filterBy={filterBy} />
+        <SideBar onSetFilter={this.onSetFilter} onGetAllEmails={this.onGetAllEmails} />
       </section>
     )
   }
