@@ -1,0 +1,11 @@
+.pick-notes {
+    display: flex;
+    gap: 10px;
+}
+
+.note-btn {
+    color: white;
+    background-color: gray;
+    cursor:pointer;
+    padding:10px;
+}

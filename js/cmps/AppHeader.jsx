@@ -1,5 +1,5 @@
 const { NavLink, withRouter } = ReactRouterDOM
- class _AppHeader extends React.Component {
+class _AppHeader extends React.Component {
 
     render() {
 
@@ -10,10 +10,11 @@ const { NavLink, withRouter } = ReactRouterDOM
                     <NavLink exact to="/" >Home</NavLink>
                     <NavLink to="/about" >About</NavLink>
                     <NavLink to="/book" >Books</NavLink>
+                    <NavLink to="/keep">Notes</NavLink>
                 </nav>
             </section>
         )
     }
 }
 
-export const AppHeader= withRouter(_AppHeader)
+export const AppHeader = withRouter(_AppHeader)
