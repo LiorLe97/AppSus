@@ -1,10 +1,25 @@
 
-
-export function NotePreview({ note }) {
-    return (
-        <section className="note-preview">
-            <h3>{note.type}</h3>
-        </section>
-    )
+import { TextNotePreview } from './TextNotePreview.jsx'
+import { ImageNotePreview } from './ImageNotePreview.jsx'
+import { TodosNotePreview } from './TodosNotePreview.jsx'
+export class NotePreview extends React.Component {
+    render() {
+        const { note } = this.props
+        const DynamicCmp = (props) => {
+            switch (props.note.type) {
+                case 'note-text':
+                    return <TextNotePreview {...props} />
+                case 'note-image':
+                    return <ImageNotePreview {...props} />
+                    case 'note-todos':
+                        return <TodosNotePreview {...props}/>
+            }
+        }
+        return (
+            <section className="note-preview" >
+                <DynamicCmp note={note} />
+            </section>
+        )
+    }
 
 }

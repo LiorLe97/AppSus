@@ -1,0 +1,22 @@
+.image-note-preview {
+    background-color: rgb(73, 169, 248);
+    padding: 15px;
+    max-width: 300px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.text-note-preview {
+    background-color: rgb(73, 169, 248);
+    padding: 15px;
+    max-width: 100px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+.note-preview{
+    margin:10px;
+    display:flex;
+}

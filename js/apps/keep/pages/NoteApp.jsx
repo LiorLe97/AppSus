@@ -11,7 +11,6 @@ export class KeepApp extends React.Component {
         inputType: 'text'
     }
 
-
     componentDidMount() {
         this.loadNotes()
 
@@ -21,13 +20,18 @@ export class KeepApp extends React.Component {
         noteService.query(this.state.filterBy)
             .then(notes => { this.setState({ notes }) })
     }
-    onChangeNoteType=(type)=>{
-        this.setState({inputType:type})
+    onChangeNoteType = (type) => {
+        this.setState({ inputType: type })
 
     }
-    onSetFilter=(filterBy)=>{
-        this.setState({filterBy},this.loadNotes);
+    onSetFilter = (filterBy) => {
+        this.setState({ filterBy }, this.loadNotes);
 
+    }
+    onSaveNote = (ev, noteInfo, noteType) => {
+        ev.preventDefault()
+        noteService.onSaveNote(noteType, noteInfo)
+            .then(this.loadNotes)
     }
 
     render() {
@@ -42,12 +46,12 @@ export class KeepApp extends React.Component {
         }
         return (
             <section className="note-app">
-                <NotesFilter onSetFilter={this.onSetFilter}/>
+                <NotesFilter onSetFilter={this.onSetFilter} />
                 <div className="pick-notes">
-                    <DynamicCmp type={inputType} loadNotes={this.loadNotes} />
-                    <div className="note-text note-btn" onClick={()=>{this.onChangeNoteType('text')}}>Add note</div>
+                    <DynamicCmp type={inputType} onSaveNote={this.onSaveNote} />
+                    <div className="note-text note-btn" onClick={() => { this.onChangeNoteType('text') }}>Add note</div>
                     <div className="note-list note-btn">Add list</div>
-                    <div className="note-img note-btn" onClick={()=>{this.onChangeNoteType('image')}}>Add image</div>
+                    <div className="note-img note-btn" onClick={() => { this.onChangeNoteType('image') }}>Add image</div>
                     <div className="note-video note-btn">Add video</div>
                 </div>
                 <NotesList notes={notes} />

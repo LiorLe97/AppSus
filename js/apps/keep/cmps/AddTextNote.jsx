@@ -14,22 +14,13 @@ export class AddTextNote extends React.Component {
 
     }
 
-    onSaveNote = (ev, noteInfo) => {
-        const noteType = this.props.type
-        const { loadNotes } = this.props
-        ev.preventDefault();
-        noteService.onSaveNote(noteType, noteInfo)
-            .then(loadNotes)
-
-    }
-
 
     render() {
-        const { type } = this.props
+        const { type, onSaveNote } = this.props
         const { value } = this.state.info
         return (
             <form className="add-note" onSubmit={() => {
-                this.onSaveNote(event, this.state.info)
+                onSaveNote(event, this.state.info,type)
             }} >
                 <input className="note-input" name="text" value={value} type={type} placeholder="Enter text" onChange={this.handleChange} />
             </form>

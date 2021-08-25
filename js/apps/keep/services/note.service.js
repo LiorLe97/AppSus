@@ -21,7 +21,7 @@ let notes = storageService.loadFromStorage(KEY) || [
         id: "n102",
         type: "note-image",
         info: {
-            url: "http://some-img/me",
+            url: "https://images.unsplash.com/photo-1593642634402-b0eb5e2eebc9?ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80",
             title: "Bobi and Me"
         },
         style: {
@@ -57,7 +57,10 @@ function onSaveNote(noteType, noteToAdd) {
     console.log(noteToAdd)
     switch (noteType) {
         case 'text':
-            notes.push(_createTextNote(noteType,noteToAdd))
+            notes.push(_createTextNote(noteType, noteToAdd))
+            break;
+        case 'image':
+            notes.push(_createImageNote(noteType, noteToAdd))
             break;
 
     }
@@ -67,18 +70,25 @@ function onSaveNote(noteType, noteToAdd) {
 }
 
 
-function _createTextNote(noteType,noteInfo) {
-    console.log(noteType,)
+function _createTextNote(noteType, noteInfo) {
     return {
         id: utilService.makeId(),
-        type:`note-${noteType}`,
+        type: `note-${noteType}`,
         isPinned: false,
         info: noteInfo
     }
 
-
-
 }
+
+function _createImageNote(noteType, noteInfo) {
+    return {
+        id: utilService.makeId(),
+        type: `note-${noteType}`,
+        isPinned: false,
+        info: noteInfo
+    }
+}
+
 
 
 

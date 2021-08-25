@@ -4,4 +4,5 @@
 @import url('/css/apps/books/main.css');
 @import url('/css/apps/keep/note-app.css');
 @import url('/css/apps/keep/add-note.css');
-@import url('/css/apps/keep/notes-filter.css')
+@import url('/css/apps/keep/notes-filter.css');
+@import url('/css/apps/keep/note-preview.css')
