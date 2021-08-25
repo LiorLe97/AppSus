@@ -11,6 +11,7 @@ import { BookReviewsList } from './js/apps/book/cmps/BookReviewsList.jsx';
 import { AddBook } from './js/apps/book/cmps/AddBook.jsx';
 import { MailApp } from './js/apps/mail/pages/MailApp.jsx';
 import { KeepApp } from './js/apps/keep/pages/NoteApp.jsx'
+import { MailDetails } from './js/apps/mail/pages/MailDetails.jsx';
 export function App() {
     return (
         <Router>
@@ -23,6 +24,7 @@ export function App() {
                     <Route path="/book/review/:bookId" component={BookReview} />
                     <Route path="/book/AddBook" component={AddBook} />
                     <Route path="/book/:bookId" component={BookDetails} />
+                    <Route path="/emails/:emailId" component={MailDetails} />
                     <Route path="/emails" component={MailApp} />
                     <Route path="/keep" component={KeepApp}/>
                     <Route path="/book" component={BookApp} />

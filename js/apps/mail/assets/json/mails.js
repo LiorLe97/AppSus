@@ -5,23 +5,23 @@ export const emails =
       subject: 'New products arrived, Come look',
       body: 'Hello, Our new line of products just arrived and we think it will be a perfect match for you. You can find them in our stores and website. Have fun ',
       isRead: false,
-      sentAt: 1551133930594,
+      sentAt: 1551133930595,
       to: 'momo@momo.com'
     },
     {
       id: 'e102',
       subject: 'Job Offer!',
       body: 'Would love to offer you the position of a senior fullstack developer even you are not a junior yet, All good man no worries',
-      isRead: false,
-      sentAt: 1551133930594,
+      isRead: true,
+      sentAt: 1251132930594,
       to: 'momo@momo.com'
     },
     {
       id: 'e103',
       subject: 'Project missions',
       body: 'Hey, just letting you know we need to finish the functionality of our app. Give me a call',
-      isRead: false,
-      sentAt: 1551133930594,
+      isRead: true,
+      sentAt: 1350133930594,
       to: 'momo@momo.com'
     },
     {
@@ -37,7 +37,7 @@ export const emails =
       subject: 'Release shuly (tickets resevation)',
       body: 'Hello, this email is to confirm your purchase for realse shuly at 25/8/21 21:00',
       isRead: false,
-      sentAt: 1551133930594,
+      sentAt: 1851133930594,
       to: 'momo@momo.com'
     }
 

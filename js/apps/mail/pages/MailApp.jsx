@@ -5,32 +5,32 @@ import { SideBar } from '../cmps/SideBar.jsx';
 export class MailApp extends React.Component {
   state = {
     mails: [],
-    // filterBy: null,
+    filterBy: null,
   }
 
   componentDidMount() {
-    this.loadBooks();
+    this.LoadEmails();
 
   }
 
-  loadBooks = () => {
-    mailService.query().then((mails) => {
+  LoadEmails = () => {
+    mailService.query(this.state.filterBy).then((mails) => {
       this.setState({ mails })
     })
   }
 
 
 
-  // onSetFilter = (filterBy) => {
-  //   this.setState({ filterBy }, this.loadBooks);
-  // };
+  onSetFilter = (filterBy) => {
+    this.setState({ filterBy }, this.LoadEmails);
+  };
 
   render() {
     const { mails } = this.state
     return (
       <section className="mail-app">
-        <MailsList mails={mails} />
-        <SideBar />
+        <MailsList mails={mails} history={this.props.history} />
+        <SideBar onSetFilter={this.onSetFilter}/>
       </section>
     )
   }
