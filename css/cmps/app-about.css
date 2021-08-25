@@ -15,10 +15,9 @@
     max-width: 250px;
 }
 
-.team-card{
+.team-card {
     height: 160px;
 }
-
 
 .about-img {
     width: 80px;
@@ -28,12 +27,19 @@
     border-radius: 50%;
     object-fit: fill;
 }
+
 .team-card h4 {
     margin-bottom: 8px;
 }
+
 .team-card div {
     width: 230px;
 }
+
+.cards {
+    display: flex;
+}
+
 /* .socials a {
     font-family: Brands;
     font-size: 24px;
