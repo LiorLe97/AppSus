@@ -1,3 +1,9 @@
+*{
+    box-sizing: border-box;
+}
+
+
+
 body {
     background-color: skyblue;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
