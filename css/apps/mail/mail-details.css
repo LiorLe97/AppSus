@@ -1,0 +1,14 @@
+.email-dlt{
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    background-color:inherit; /* Blue background */
+    border: none; /* Remove borders */
+    color: rgb(44, 44, 44); /* White text */
+    padding: 6px 8px; /* Some padding */
+    font-size: 25px; /* Set a font size */
+    cursor: pointer;
+}
+
+.email-details{
+align-items: center;
+
+}

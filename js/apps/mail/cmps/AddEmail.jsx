@@ -1,20 +1,49 @@
+import { mailService } from "../services/mail.service.js"
+
 export class AddEmail extends React.Component {
+    state = {
+        email:{
+            to:'',
+            subject:'',
+            body:''
+
+        }
+    }
+    onHandleChange = ({ target }) => {
+        let field = target.name
+        let value = target.value
+       
+        this.setState(prevState => ({ email: { ...prevState.email, [field]: value } }), () => {
+            console.log(this.state.email);
+        })
+    }
+
+    onSaveReview = (ev) => {
+        ev.preventDefault()
+        mailService.composeEmail(this.state.email)
+            .then(() =>{
+                this.props.history.push('/emails');
+                this.props.openCompose()
+            })
+        }
+
     render() {
         const { onComposeEmail } = this.props
+        const {to}=this.state
         return (
-            <section className="AddEmail">
+            <form className="AddEmail" onSubmit={this.onSaveReview}>
 
-            <label htmlFor="to">TO</label>
-            <input type="text" name="to"/>
+                <label htmlFor="to">TO</label>
+                <input type="text" name="to" id="to" value={to} onChange={this.onHandleChange} />
 
-            <label htmlFor="subject">subject</label>
-            <input type="text" name="subject"/>
+                <label htmlFor="subject">subject</label>
+                <input type="text" name="subject" id="subject" onChange={this.onHandleChange}  />
 
-            <label htmlFor="content">Content</label>
-<textarea name="content" id="content" cols="40" rows="7"></textarea>
+                <label htmlFor="body">Content</label>
+                <textarea name="body" id="body" cols="40" rows="7" onChange={this.onHandleChange} ></textarea>
 
-
-            </section>
+                <button>Send Email</button>
+            </form>
         )
     }
 }
