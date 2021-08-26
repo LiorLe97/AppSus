@@ -6,7 +6,7 @@ export const emails =
       body: 'Hello, Our new line of products just arrived and we think it will be a perfect match for you. You can find them in our stores and website. Have fun ',
       isRead: false,
       sentAt: 1551133930595,
-      to: 'momo@momo.com'
+      to: 'tal@ekroni.com'
     },
     {
       id: 'e102',
@@ -14,7 +14,7 @@ export const emails =
       body: 'Would love to offer you the position of a senior fullstack developer even you are not a junior yet, All good man no worries',
       isRead: true,
       sentAt: 1251132930594,
-      to: 'momo@momo.com'
+      to: 'tal@ekroni.com'
     },
     {
       id: 'e103',
@@ -22,7 +22,7 @@ export const emails =
       body: 'Hey, just letting you know we need to finish the functionality of our app. Give me a call',
       isRead: true,
       sentAt: 1350133930594,
-      to: 'momo@momo.com'
+      to: 'tal@ekroni.com'
     },
     {
       id: 'e104',
@@ -30,7 +30,7 @@ export const emails =
       body: 'Hello, we will be glad to get a review for your staying at our hotel. Hope you had a great time',
       isRead: true,
       sentAt: 1551133930594,
-      to: 'momo@momo.com'
+      to: 'tal@ekroni.com'
     },
     {
       id: 'e105',
@@ -38,7 +38,24 @@ export const emails =
       body: 'Hello, this email is to confirm your purchase for realse shuly at 25/8/21 21:00',
       isRead: false,
       sentAt: 1851133930594,
-      to: 'momo@momo.com'
+      to: 'tal@ekroni.com'
+    }
+    ,
+    {
+      id: 'e106',
+      subject: 'check 1',
+      body: 'Hello, this email is to confirm your purchase for realse shuly at 25/8/21 21:00',
+      isRead: false,
+      sentAt: 1851133930594,
+      to: 'lior@leizer.com'
+    },
+    {
+      id: 'e107',
+      subject: 'check 2',
+      body: 'Hello, this email is to confirm your purchase for realse shuly at 25/8/21 21:00',
+      isRead: false,
+      sentAt: 1851133930594,
+      to: 'lior@leizer.com'
     }
 
   ]

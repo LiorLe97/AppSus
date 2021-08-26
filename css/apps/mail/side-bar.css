@@ -1,5 +1,10 @@
-.side-bar{
+.side-bar {
     flex-direction: column;
-    margin-top: 7vh;
-
+    position: relative;
+    top: 9rem;
+    height: 10vh;
+}
+.search-email-lbl{
+    text-align: center;
+    margin-bottom: 0.3rem;
 }

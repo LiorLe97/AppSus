@@ -35,6 +35,7 @@ export class MailDetails extends React.Component {
                 <h4>Email content</h4>
                 <p>{email.body}  </p>
                 <span>Recievd At: {mailService.formatEmailTimestamp(email.sentAt)}</span> 
+                <span>{email.to}</span> 
                 <button className="email-dlt" onClick={() => this.onDeleteEmail(email.id)}>Delete</button>
             </section>
         )

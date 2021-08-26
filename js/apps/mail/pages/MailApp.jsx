@@ -38,11 +38,6 @@ export class MailApp extends React.Component {
     this.setState({ isCompose: !this.state.isCompose })
   }
 
-  onComposeEmail = (email) => {
-    mailService.composeEmail(email)
-      .then(data => console.log(data))
-  }
-
   onToggleReadEmail = (decision, emailId) => {
     let emailIdx = mailService.getEmailIdx(emailId)
     mailService.toggleReadEmail(emailIdx, decision)
@@ -56,7 +51,7 @@ export class MailApp extends React.Component {
 
         {!isCompose && <MailsList mails={mails} history={this.props.history} onReadEmail={this.onReadEmail} filterBy={filterBy} onToggleReadEmail={this.onToggleReadEmail} />}
         <SideBar onSetFilter={this.onSetFilter} openCompose={this.openCompose} />
-        {isCompose && <AddEmail openCompose={this.openCompose} history={this.props.history} />}
+        {isCompose && <AddEmail openCompose={this.openCompose} history={this.props.history} LoadEmails={this.LoadEmails}  />}
 
       </section>
     )

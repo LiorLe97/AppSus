@@ -4,7 +4,6 @@ import { utilService } from '../../../services/util.service.js'
 
 export const mailService = {
     query,
-    getLoggedinUser,
     getEmailById,
     getNextEmailById,
     getEmailIdx,
@@ -13,14 +12,10 @@ export const mailService = {
     composeEmail,
     toggleReadEmail,
     getUnreadEmails
-
-
 }
-function getLoggedinUser() {
-    return Promise.resolve(loggedinUser)
-}
+
 const loggedinUser = {
-    email: 'user@appsus.com',
+    email: 'tal@ekroni.com',
     fullname: 'Mahatma Appsus'
 }
 
@@ -35,22 +30,22 @@ function _createEmail(email) {
         body: email.body,
         isRead: false,
         sentAt: Date.now(),
-        to: 'momo@momo.com'
+        to: email.to
     }
 }
 function query(filterBy) {
     if (filterBy) {
-        let { txt, isRead } = filterBy
+        let { txt, isRead, status } = filterBy
         if (isRead === 'all') {
             const allEmailsToShow = gEmails.filter(email => {
                 return email.subject.toLowerCase().includes(txt.toLowerCase())
             })
             return Promise.resolve(allEmailsToShow)
-
-        } else if (isRead === true || isRead === false || isRead == null) {
+        } else 
+        if ((isRead === true || isRead === false || isRead === null )) {
             const emailsToShow = gEmails.filter(email => {
                 return email.subject.toLowerCase().includes(txt.toLowerCase()) &&
-                    email.isRead === isRead
+                    email.isRead === isRead 
             })
             return Promise.resolve(emailsToShow)
         }
