@@ -36,9 +36,22 @@ function _createEmail(email) {
 function query(filterBy) {
     if (filterBy) {
         let { txt, isRead, status } = filterBy
+        if(status) {
+            if(status==='inbox') {
+                const inboxEmailsToShow = gEmails.filter(email => {
+                    return  email.to === loggedinUser.email
+                })
+                return Promise.resolve(inboxEmailsToShow)
+            } else if (status==='sent') {
+                const sentEmailsToShow = gEmails.filter(email => {
+                    return  email.to !== loggedinUser.email
+                })
+                return Promise.resolve(sentEmailsToShow)
+            }
+        } 
         if (isRead === 'all') {
             const allEmailsToShow = gEmails.filter(email => {
-                return email.subject.toLowerCase().includes(txt.toLowerCase())
+                return email.subject.toLowerCase().includes(txt.toLowerCase()) 
             })
             return Promise.resolve(allEmailsToShow)
         } else 

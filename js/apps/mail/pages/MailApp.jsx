@@ -32,8 +32,10 @@ export class MailApp extends React.Component {
   }
 
   onSetFilter = (criteria) => {
+    if (this.state.isCompose) this.openCompose()
     this.setState({ filterBy: criteria }, this.LoadEmails)
-  };
+  }
+
   openCompose = () => {
     this.setState({ isCompose: !this.state.isCompose })
   }
@@ -44,14 +46,23 @@ export class MailApp extends React.Component {
     this.LoadEmails()
     return Promise.resolve()
   }
+  onToggleInboxSent = (sentOrInbox) => {
+    let filter = {
+      status: sentOrInbox,
+      txt: '',
+      isRead: 'all',
+    }
+    this.setState({ filterBy: filter }, this.LoadEmails)
+
+  }
   render() {
     const { mails, filterBy, isCompose } = this.state
     return (
       <section className="mail-app flex">
 
         {!isCompose && <MailsList mails={mails} history={this.props.history} onReadEmail={this.onReadEmail} filterBy={filterBy} onToggleReadEmail={this.onToggleReadEmail} />}
-        <SideBar onSetFilter={this.onSetFilter} openCompose={this.openCompose} />
-        {isCompose && <AddEmail openCompose={this.openCompose} history={this.props.history} LoadEmails={this.LoadEmails}  />}
+        <SideBar onSetFilter={this.onSetFilter} openCompose={this.openCompose} onToggleInboxSent={this.onToggleInboxSent} />
+        {isCompose && <AddEmail openCompose={this.openCompose} history={this.props.history} LoadEmails={this.LoadEmails} />}
 
       </section>
     )

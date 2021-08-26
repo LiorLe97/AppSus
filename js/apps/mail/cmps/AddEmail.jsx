@@ -14,7 +14,6 @@ export class AddEmail extends React.Component {
         let value = target.value
 
         this.setState(prevState => ({ email: { ...prevState.email, [field]: value } }), () => {
-            console.log(this.state.email);
         })
     }
 
