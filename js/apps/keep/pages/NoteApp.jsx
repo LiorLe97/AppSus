@@ -40,6 +40,12 @@ export class KeepApp extends React.Component {
             .then(this.loadNotes)
 
     }
+    onSetNoteColor = (noteId, color) => {
+        noteService.changeColor(noteId, color)
+            .then(this.loadNotes)
+
+    }
+
 
     render() {
         const { notes, inputType } = this.state
@@ -65,7 +71,7 @@ export class KeepApp extends React.Component {
                     <div className="note-img note-btn" onClick={() => { this.onChangeNoteType('image') }}></div>
                     <div className="note-video note-btn" onClick={() => { this.onChangeNoteType('video') }}></div>
                 </div>
-                <NotesList notes={notes} onDeleteNote={this.onDeleteNote} />
+                <NotesList notes={notes} onDeleteNote={this.onDeleteNote} onSetNoteColor={this.onSetNoteColor} />
 
             </section>
         )

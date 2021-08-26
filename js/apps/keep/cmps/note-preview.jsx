@@ -3,9 +3,22 @@ import { TextNotePreview } from './TextNotePreview.jsx'
 import { ImageNotePreview } from './ImageNotePreview.jsx'
 import { TodosNotePreview } from './TodosNotePreview.jsx'
 import { VideoNotePreview } from './VideoNotePreview.jsx'
+import { noteService } from '../services/note.service.js'
 export class NotePreview extends React.Component {
+    state = {
+        style: {
+            backgroundColor: "#49a9f8"
+        }
+    }
+    // onChangeColor = (field, value) => {
+    //     const { note } = this.props
+    //     console.log('value', value)
+    //     this.setState(prevState => ({ style: { ...prevState.style, [field]: value } }))
+    //     note.style = this.state.style
+    // }
     render() {
-        const { note, onDeleteNote } = this.props
+        const { note, onDeleteNote, onSetNoteColor } = this.props
+        const { style } = this.state
         const DynamicCmp = (props) => {
             switch (props.note.type) {
                 case 'note-text':
@@ -20,7 +33,7 @@ export class NotePreview extends React.Component {
         }
         return (
             <section className="note-preview" >
-                <DynamicCmp note={note} onDeleteNote={onDeleteNote} />
+                <DynamicCmp note={note} onDeleteNote={onDeleteNote} style={{ backgroundColor: note.style.bgcolor }} onSetNoteColor={onSetNoteColor} />
             </section>
         )
     }
