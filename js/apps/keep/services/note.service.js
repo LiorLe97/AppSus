@@ -36,6 +36,13 @@ let notes = storageService.loadFromStorage(KEY) || [
             todos: ["Driving liscence", "Coding power"]
 
         }
+    },
+    {
+        id: "n104",
+        type: "note-video",
+        info: {
+            urlId: "5-0BwZ1r6H4"
+        }
     }
 ];
 
@@ -66,6 +73,13 @@ function onSaveNote(noteType, noteToAdd) {
             console.log(noteToAdd)
             notes.push(_createTodoNote(noteType, noteToAdd))
             break;
+        case 'video':
+            // console.log(noteToAdd)
+            let url = new URL(noteToAdd.urlId);
+            var params = url.search
+            const urlId = params.substring(3, 14)
+            noteToAdd.urlId = urlId
+            notes.push(_createVideoNote(noteType, noteToAdd))
 
     }
     _saveNotesToStorage()
@@ -100,6 +114,15 @@ function _createTodoNote(noteType, noteInfo) {
         isPinned: false,
         info: noteInfo
 
+    }
+}
+
+function _createVideoNote(noteType, noteInfo) {
+    return {
+        id: utilService.makeId(),
+        type: `note-${noteType}`,
+        isPinned: false,
+        info: noteInfo
     }
 }
 
