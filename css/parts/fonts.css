@@ -1,0 +1,8 @@
+@font-face {
+    font-family: Brands;
+    src: url('../assests/fonts/Awesome/fa-brands-400.ttf');
+}
+@font-face {
+    font-family: Solids;
+    src: url('../assests/fonts/Awesome/fa-solid-900.ttf');
+}

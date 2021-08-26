@@ -26,7 +26,7 @@ onGetAllEmails=()=> {
         const { txt } = this.state.filterBy
 
         return (
-            <section className='side-bar'>
+            <section className='side-bar flex'>
                 <input type="text" name="txt" value={txt} onChange={this.onHandleInput} />
                 <button onClick={() => this.onHandleChange(false, 'isRead')}>Unread</button>
                 <button onClick={() => this.onHandleChange(true, 'isRead')}>Read</button>

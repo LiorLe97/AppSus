@@ -48,7 +48,7 @@ export class MailApp extends React.Component {
 
     return (
 
-      <section className="mail-app">
+      <section className="mail-app flex">
         <MailsList mails={mails} history={this.props.history} filterBy={filterBy} onToggleReadEmail={this.onToggleReadEmail} />
         <SideBar onSetFilter={this.onSetFilter}  openCompose={this.openCompose} />
         {isCompose && <AddEmail  />}
