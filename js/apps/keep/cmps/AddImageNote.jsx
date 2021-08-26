@@ -2,6 +2,7 @@
 export class AddImageNote extends React.Component {
     state = {
         info: {
+            title: '',
             url: ''
         }
     }
@@ -12,12 +13,19 @@ export class AddImageNote extends React.Component {
     }
 
     render() {
-        const { url } = this.state.info
+        const { url, title } = this.state.info
         const { onSaveNote, type } = this.props
         return (
-            <form className="add-note" onSubmit={() => { onSaveNote(event, this.state.info, type) }}>
-                <input className="note-input" name="url" value={url} type="text" placeholder="Enter image url" onChange={this.handleChange} />
-            </form>
+            <section className="flex">
+
+                <form className="add-note" onSubmit={() => { onSaveNote(event, this.state.info, type) }}>
+                    <input className="note-input" name="title" value={title} type="text" placeholder="Enter title" onChange={this.handleChange} />
+                </form>
+                <form className="add-note" onSubmit={() => { onSaveNote(event, this.state.info, type) }}>
+                    <input className="note-input" name="url" value={url} type="text" placeholder="Enter image url" onChange={this.handleChange} />
+
+                </form  >
+            </section>
         )
     }
 }

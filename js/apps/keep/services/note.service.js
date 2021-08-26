@@ -4,7 +4,7 @@ import { utilService } from '../../../services/util.service.js'
 
 export const noteService = {
     query,
-    onSaveNote
+    onSaveNote,
 }
 const KEY = 'notesDB'
 
@@ -32,11 +32,9 @@ let notes = storageService.loadFromStorage(KEY) || [
         id: "n103",
         type: "note-todos",
         info: {
-            title: "Get my stuff together",
-            todos: [
-                { txt: "Driving liscence", doneAt: null },
-                { txt: "Coding power", doneAt: 187111111 }
-            ]
+            title: "To Do",
+            todos: ["Driving liscence", "Coding power"]
+
         }
     }
 ];
@@ -61,6 +59,12 @@ function onSaveNote(noteType, noteToAdd) {
             break;
         case 'image':
             notes.push(_createImageNote(noteType, noteToAdd))
+            break;
+        case 'todos':
+            const noteTodos = noteToAdd.todos.split(',')
+            noteToAdd.todos = noteTodos
+            console.log(noteToAdd)
+            notes.push(_createTodoNote(noteType, noteToAdd))
             break;
 
     }
@@ -89,7 +93,15 @@ function _createImageNote(noteType, noteInfo) {
     }
 }
 
+function _createTodoNote(noteType, noteInfo) {
+    return {
+        id: utilService.makeId(),
+        type: `note-${noteType}`,
+        isPinned: false,
+        info: noteInfo
 
+    }
+}
 
 
 function _saveNotesToStorage() {
