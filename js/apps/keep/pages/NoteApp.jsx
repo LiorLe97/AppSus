@@ -35,6 +35,11 @@ export class KeepApp extends React.Component {
         noteService.onSaveNote(noteType, noteInfo)
             .then(this.loadNotes)
     }
+    onDeleteNote = (noteId) => {
+        noteService.deleteNote(noteId)
+            .then(this.loadNotes)
+
+    }
 
     render() {
         const { notes, inputType } = this.state
@@ -55,12 +60,12 @@ export class KeepApp extends React.Component {
                 <NotesFilter onSetFilter={this.onSetFilter} />
                 <div className="pick-notes">
                     <DynamicCmp type={inputType} onSaveNote={this.onSaveNote} />
-                    <div className="note-text note-btn" onClick={() => { this.onChangeNoteType('text') }}>Add note</div>
-                    <div className="note-list note-btn" onClick={() => { this.onChangeNoteType('todos') }}>Add list</div>
-                    <div className="note-img note-btn" onClick={() => { this.onChangeNoteType('image') }}>Add image</div>
-                    <div className="note-video note-btn" onClick={() => { this.onChangeNoteType('video') }}>Add video</div>
+                    <div className="note-text note-btn" onClick={() => { this.onChangeNoteType('text') }}></div>
+                    <div className="note-list note-btn" onClick={() => { this.onChangeNoteType('todos') }}></div>
+                    <div className="note-img note-btn" onClick={() => { this.onChangeNoteType('image') }}></div>
+                    <div className="note-video note-btn" onClick={() => { this.onChangeNoteType('video') }}></div>
                 </div>
-                <NotesList notes={notes} />
+                <NotesList notes={notes} onDeleteNote={this.onDeleteNote} />
 
             </section>
         )

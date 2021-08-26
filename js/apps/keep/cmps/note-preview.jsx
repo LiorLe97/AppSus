@@ -5,7 +5,7 @@ import { TodosNotePreview } from './TodosNotePreview.jsx'
 import { VideoNotePreview } from './VideoNotePreview.jsx'
 export class NotePreview extends React.Component {
     render() {
-        const { note } = this.props
+        const { note, onDeleteNote } = this.props
         const DynamicCmp = (props) => {
             switch (props.note.type) {
                 case 'note-text':
@@ -20,7 +20,7 @@ export class NotePreview extends React.Component {
         }
         return (
             <section className="note-preview" >
-                <DynamicCmp note={note} />
+                <DynamicCmp note={note} onDeleteNote={onDeleteNote} />
             </section>
         )
     }

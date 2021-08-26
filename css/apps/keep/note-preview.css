@@ -16,6 +16,10 @@
     align-items: center;
 }
 
+.delete-btn {
+    display:flex;
+}
+
 .todos-note-preview {
     background-color: rgb(73, 169, 248);
     padding: 15px;
@@ -27,7 +31,7 @@
     align-items: center;
 }
 
-.video-note-preview{
+.video-note-preview {
     background-color: rgb(73, 169, 248);
     padding: 15px;
     padding: 15px;
@@ -35,7 +39,6 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-
 }
 
 .note-preview {
@@ -45,7 +48,7 @@
 
 .todo-preview {
     display: flex;
-    gap:5px;
+    gap: 5px;
 }
 
 li {
