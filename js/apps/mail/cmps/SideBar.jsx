@@ -18,13 +18,13 @@ export class SideBar extends React.Component {
         const value = ev.target.value
         this.setState(prevState => ({ filterBy: { ...prevState.filterBy, [field]: value } }), () => { this.props.onSetFilter(this.state.filterBy) })
     }
-onGetAllEmails=()=> {
-    this.setState(prevState => ({ filterBy: { ...prevState.filterBy, isRead: 'all' } }), () => { this.props.onSetFilter(this.state.filterBy) })
+    onGetAllEmails = () => {
+        this.setState(prevState => ({ filterBy: { ...prevState.filterBy, isRead: 'all' } }), () => { this.props.onSetFilter(this.state.filterBy) })
 
-}
+    }
     render() {
         const { txt } = this.state.filterBy
-
+        const { openCompose } = this.props
         return (
             <section className='side-bar flex'>
                 <input type="text" name="txt" value={txt} onChange={this.onHandleInput} />
@@ -33,7 +33,7 @@ onGetAllEmails=()=> {
                 <button onClick={this.onGetAllEmails}>All</button>
                 {/* <button onClick={() => this.onHandleChange('inbox', 'status')}>inbox</button>
                 <button onClick={() => this.onHandleChange('sent', 'status')}>sent</button> */}
-                <button >Compose</button>
+                <button onClick={openCompose}>Compose</button>
             </section>
         )
     }

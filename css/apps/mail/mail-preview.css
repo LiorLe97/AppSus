@@ -16,6 +16,5 @@
 }
 
 .toggle-is-read.unread::before{
-
     content: '\f0e0';
 }
