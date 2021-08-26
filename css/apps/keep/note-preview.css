@@ -2,21 +2,45 @@
     background-color: rgb(73, 169, 248);
     padding: 15px;
     max-width: 300px;
-    display:flex;
+    display: flex;
     justify-content: center;
     align-items: center;
 }
-
 
 .text-note-preview {
     background-color: rgb(73, 169, 248);
     padding: 15px;
     max-width: 100px;
-    display:flex;
+    display: flex;
     justify-content: center;
     align-items: center;
 }
-.note-preview{
-    margin:10px;
-    display:flex;
+
+.todos-note-preview {
+    background-color: rgb(73, 169, 248);
+    padding: 15px;
+    padding: 15px;
+    max-width: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.note-preview {
+    margin: 10px;
+    display: flex;
+}
+
+.todo-preview {
+    display: flex;
+    gap:5px;
+}
+
+li {
+    cursor: pointer;
+}
+
+.done {
+    text-decoration: line-through
 }
