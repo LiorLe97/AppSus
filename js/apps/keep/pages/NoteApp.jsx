@@ -4,6 +4,7 @@ import { NotesFilter } from '../cmps/NotesFilter.jsx'
 import { AddTextNote } from '../cmps/AddTextNote.jsx'
 import { AddImageNote } from '../cmps/AddImageNote.jsx'
 import { AddTodosNote } from '../cmps/AddTodosNote.jsx'
+import { AddVideoNote } from '../cmps/AddVideoNote.jsx'
 
 export class KeepApp extends React.Component {
     state = {
@@ -45,6 +46,8 @@ export class KeepApp extends React.Component {
                     return <AddImageNote {...props} />
                 case 'todos':
                     return <AddTodosNote {...props} />
+                case 'video':
+                    return <AddVideoNote {...props} />
             }
         }
         return (
@@ -55,7 +58,7 @@ export class KeepApp extends React.Component {
                     <div className="note-text note-btn" onClick={() => { this.onChangeNoteType('text') }}>Add note</div>
                     <div className="note-list note-btn" onClick={() => { this.onChangeNoteType('todos') }}>Add list</div>
                     <div className="note-img note-btn" onClick={() => { this.onChangeNoteType('image') }}>Add image</div>
-                    <div className="note-video note-btn">Add video</div>
+                    <div className="note-video note-btn" onClick={() => { this.onChangeNoteType('video') }}>Add video</div>
                 </div>
                 <NotesList notes={notes} />
 
