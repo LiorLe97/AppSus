@@ -9,7 +9,9 @@ export const mailService = {
     getNextEmailById,
     getEmailIdx,
     formatEmailTimestamp,
-    deleteEmail
+    deleteEmail,
+    // composeEmail,
+    toggleReadEmail
 
 
 }
@@ -22,7 +24,10 @@ const loggedinUser = {
 }
 
 const KEY = 'emailsDB'
-let gEmails = _loadEmailsFromStorage() || emails
+// let gEmails = loadEmailsFromStorage()
+let gEmails = emails
+// gEmails = (gEmails.length === 0) ? emails : loadEmailsFromStorage()
+
 
 function _createEmail(email) {
     return {
@@ -35,24 +40,33 @@ function _createEmail(email) {
     }
 }
 function query(filterBy) {
-    console.log(filterBy)
+    console.log('filterBy', filterBy)
+
     if (filterBy) {
         let { txt, isRead } = filterBy
-        const emailsToShow = gEmails.filter(email => {
-            return email.body.includes(txt) && 
-            email.isRead === isRead
-        })
-        return Promise.resolve(emailsToShow)
+        if (isRead==='all') {
+            const allEmailsToShow = gEmails.filter(email => {
+                return email.subject.toLowerCase().includes(txt.toLowerCase()) 
+            })
+            return Promise.resolve(allEmailsToShow)
+
+        } else if (isRead===true||isRead===false||isRead==null) {
+            const emailsToShow = gEmails.filter(email => {
+                return email.subject.toLowerCase().includes(txt.toLowerCase()) &&
+                email.isRead === isRead
+            })
+            console.log('emails TO show', emailsToShow);
+            return Promise.resolve(emailsToShow)
         }
-    console.log(filterBy);
+    } 
     return Promise.resolve(gEmails)
 }
 
-function _saveEmailsToStorage() {
+function saveEmailsToStorage() {
     storageService.saveToStorage(KEY, gEmails)
 }
 
-function _loadEmailsFromStorage() {
+function loadEmailsFromStorage() {
     return storageService.loadFromStorage(KEY)
 
 }
@@ -90,6 +104,14 @@ function formatEmailTimestamp(timeStamp) {
 function deleteEmail(emailId) {
     let emailIdx = getEmailIdx(emailId)
     gEmails.splice(emailIdx, 1)
-    _saveEmailsToStorage()
+    saveEmailsToStorage()
     return Promise.resolve()
+}
+// function composeEmail(){
+
+// }
+
+function toggleReadEmail(emailIdx, decision) {
+    gEmails[emailIdx].isRead = decision
+    saveEmailsToStorage()
 }

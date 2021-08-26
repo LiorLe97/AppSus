@@ -8,7 +8,6 @@ export class MailDetails extends React.Component {
 
     componentDidMount() {
         this.loadEmail()
-        console.log(this.props);
     }
     loadEmail = () => {
         mailService.getEmailById(this.props.match.params.emailId)
@@ -16,8 +15,8 @@ export class MailDetails extends React.Component {
                 this.setState({ email })
             })
     }
-onDeleteEmail=()=> {
-    mailService.deleteEmail()
+onDeleteEmail=(emailId)=> {
+    mailService.deleteEmail(emailId)
     this.props.history.push('/emails')
 }
     render() {
@@ -26,7 +25,6 @@ onDeleteEmail=()=> {
         if (!email) return <div>loading...</div>
         return (
             <section>
-                {console.log(email)}
                 <h2>Title: {email.subject}</h2>
                 <h4>Email content</h4>
                 <p>{email.body} Recievd At: {mailService.formatEmailTimestamp(email.sentAt)}</p>
