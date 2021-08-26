@@ -1,5 +1,5 @@
 .image-note-preview {
-    background-color: rgb(73, 169, 248);
+    background-color: #49a9f8;
     padding: 15px;
     max-width: 300px;
     display: flex;
@@ -8,7 +8,7 @@
 }
 
 .text-note-preview {
-    background-color: rgb(73, 169, 248);
+    background-color: #49a9f8;
     padding: 15px;
     max-width: 100px;
     display: flex;
@@ -17,11 +17,10 @@
 }
 
 .delete-btn {
-    display:flex;
+    display: flex;
 }
 
 .todos-note-preview {
-    background-color: rgb(73, 169, 248);
     padding: 15px;
     padding: 15px;
     max-width: 200px;
@@ -32,13 +31,14 @@
 }
 
 .video-note-preview {
-    background-color: rgb(73, 169, 248);
+    background-color: #49a9f8;
     padding: 15px;
     padding: 15px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    border-radius: 5%;
 }
 
 .note-preview {
@@ -57,4 +57,16 @@ li {
 
 .done {
     text-decoration: line-through
+}
+
+.color-part {
+    height: 20px;
+    width: 20px;
+    margin: 10px;
+    border-radius: 3rem;
+    cursor: pointer;
+}
+
+.color-palette-icon {
+    cursor: pointer;
 }

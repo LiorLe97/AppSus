@@ -5,7 +5,8 @@ import { utilService } from '../../../services/util.service.js'
 export const noteService = {
     query,
     onSaveNote,
-    deleteNote
+    deleteNote,
+    changeColor
 }
 const KEY = 'notesDB'
 
@@ -16,6 +17,9 @@ let notes = storageService.loadFromStorage(KEY) || [
         isPinned: true,
         info: {
             text: "Fullstack Me Baby!"
+        },
+        style: {
+            bgcolor: '#49a9f8'
         }
     },
     {
@@ -26,7 +30,7 @@ let notes = storageService.loadFromStorage(KEY) || [
             title: "Bobi and Me"
         },
         style: {
-            backgroundColor: "#00d"
+            bgcolor: '#fc6f6f'
         }
     },
     {
@@ -36,6 +40,9 @@ let notes = storageService.loadFromStorage(KEY) || [
             title: "To Do",
             todos: ["Driving liscence", "Coding power"]
 
+        },
+        style: {
+            bgcolor: '#86f7a4'
         }
     },
     {
@@ -43,6 +50,9 @@ let notes = storageService.loadFromStorage(KEY) || [
         type: "note-video",
         info: {
             urlId: "5-0BwZ1r6H4"
+        },
+        style: {
+            bgcolor: '#fbfc97'
         }
     }
 ];
@@ -94,7 +104,10 @@ function _createTextNote(noteType, noteInfo) {
         id: utilService.makeId(),
         type: `note-${noteType}`,
         isPinned: false,
-        info: noteInfo
+        info: noteInfo,
+        style: {
+            bgcolor: "#49a9f8"
+        }
     }
 
 }
@@ -104,7 +117,10 @@ function _createImageNote(noteType, noteInfo) {
         id: utilService.makeId(),
         type: `note-${noteType}`,
         isPinned: false,
-        info: noteInfo
+        info: noteInfo,
+        style: {
+            bgcolor: "#49a9f8"
+        }
     }
 }
 
@@ -113,7 +129,10 @@ function _createTodoNote(noteType, noteInfo) {
         id: utilService.makeId(),
         type: `note-${noteType}`,
         isPinned: false,
-        info: noteInfo
+        info: noteInfo,
+        style: {
+            bgcolor: "#49a9f8"
+        }
 
     }
 }
@@ -123,7 +142,10 @@ function _createVideoNote(noteType, noteInfo) {
         id: utilService.makeId(),
         type: `note-${noteType}`,
         isPinned: false,
-        info: noteInfo
+        info: noteInfo,
+        style: {
+            bgcolor: "#49a9f8"
+        }
     }
 }
 function deleteNote(noteId) {
@@ -135,6 +157,28 @@ function deleteNote(noteId) {
     return Promise.resolve()
 
 }
+function changeColor(noteId, color) {
+    console.log(color)
+    console.log(noteId)
+    let note = notes.find(note => {
+        return noteId === note.id
+    })
+    note.style.bgcolor = color;
+    _saveNotesToStorage()
+    return Promise.resolve()
+}
+
+// function saveColor(noteId, color) {
+//     console.log(color)
+//     let note = notes.find(note => {
+//         return noteId === note.id
+//     })
+//     note.style.backgroundColor = color;
+//     _saveNotesToStorage()
+
+// }
+
+
 
 
 function _saveNotesToStorage() {
