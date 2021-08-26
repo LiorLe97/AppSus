@@ -5,6 +5,7 @@ import { utilService } from '../../../services/util.service.js'
 export const noteService = {
     query,
     onSaveNote,
+    deleteNote
 }
 const KEY = 'notesDB'
 
@@ -124,6 +125,15 @@ function _createVideoNote(noteType, noteInfo) {
         isPinned: false,
         info: noteInfo
     }
+}
+function deleteNote(noteId) {
+    let idx = notes.findIndex(note => {
+        return noteId === note.id
+    })
+    notes.splice(idx, 1)
+    _saveNotesToStorage()
+    return Promise.resolve()
+
 }
 
 

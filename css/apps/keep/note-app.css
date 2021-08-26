@@ -4,8 +4,31 @@
 }
 
 .note-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     color: white;
     background-color: gray;
-    cursor:pointer;
-    padding:10px;
+    cursor: pointer;
+    padding: 10px;
+}
+
+.note-video::before {
+    font-family: Brands;
+    content: '\f167';
+}
+
+.note-list::before {
+    font-family: Solids;
+    content: '\f03a'
+}
+
+.note-text::before {
+    font-family: Solids;
+    content: '\f249'
+}
+
+.note-img::before {
+    font-family: Solids;
+    content: '\f302'
 }
