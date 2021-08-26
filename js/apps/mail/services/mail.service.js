@@ -24,9 +24,7 @@ const loggedinUser = {
 }
 
 const KEY = 'emailsDB'
-// let gEmails = loadEmailsFromStorage()
-let gEmails = emails
-// gEmails = (gEmails.length === 0) ? emails : loadEmailsFromStorage()
+let gEmails = loadEmailsFromStorage().length>0?loadEmailsFromStorage():emails
 
 
 function _createEmail(email) {
