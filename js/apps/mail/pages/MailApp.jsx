@@ -7,11 +7,16 @@ import { eventBusService } from '../../../services/event-bus-service.js';
 export class MailApp extends React.Component {
   state = {
     mails: [],
-    filterBy: null,
+    filterBy: {
+      status: 'inbox',
+      txt: '',
+      // isRead: 'all',
+    },
     isCompose: false
   }
   removeEventBus;
   componentDidMount() {
+
     this.LoadEmails();
     let unread = mailService.getUnreadEmails()
     this.removeEventBus = eventBusService.on('emails-count', () => {
@@ -46,22 +51,14 @@ export class MailApp extends React.Component {
     this.LoadEmails()
     return Promise.resolve()
   }
-  onToggleInboxSent = (sentOrInbox) => {
-    let filter = {
-      status: sentOrInbox,
-      txt: '',
-      isRead: 'all',
-    }
-    this.setState({ filterBy: filter }, this.LoadEmails)
 
-  }
   render() {
     const { mails, filterBy, isCompose } = this.state
     return (
       <section className="mail-app flex">
 
         {!isCompose && <MailsList mails={mails} history={this.props.history} onReadEmail={this.onReadEmail} filterBy={filterBy} onToggleReadEmail={this.onToggleReadEmail} />}
-        <SideBar onSetFilter={this.onSetFilter} openCompose={this.openCompose} onToggleInboxSent={this.onToggleInboxSent} />
+        <SideBar onSetFilter={this.onSetFilter} openCompose={this.openCompose}  />
         {isCompose && <AddEmail openCompose={this.openCompose} history={this.props.history} LoadEmails={this.LoadEmails} />}
 
       </section>
