@@ -6,7 +6,8 @@ export const noteService = {
     query,
     onSaveNote,
     deleteNote,
-    changeColor
+    changeColor,
+    onEditNote
 }
 const KEY = 'notesDB'
 
@@ -14,7 +15,7 @@ let notes = storageService.loadFromStorage(KEY) || [
     {
         id: "n101",
         type: "note-text",
-        isPinned: true,
+        isPinned: false,
         info: {
             text: "Fullstack Me Baby!"
         },
@@ -25,6 +26,7 @@ let notes = storageService.loadFromStorage(KEY) || [
     {
         id: "n102",
         type: "note-image",
+        isPinned: false,
         info: {
             url: "https://images.unsplash.com/photo-1593642634402-b0eb5e2eebc9?ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80",
             title: "Bobi and Me"
@@ -36,6 +38,7 @@ let notes = storageService.loadFromStorage(KEY) || [
     {
         id: "n103",
         type: "note-todos",
+        isPinned: false,
         info: {
             title: "To Do",
             todos: ["Driving liscence", "Coding power"]
@@ -48,6 +51,7 @@ let notes = storageService.loadFromStorage(KEY) || [
     {
         id: "n104",
         type: "note-video",
+        isPinned: false,
         info: {
             urlId: "5-0BwZ1r6H4"
         },
@@ -69,8 +73,6 @@ function query(filterBy) {
 }
 
 function onSaveNote(noteType, noteToAdd) {
-    console.log(noteType)
-    console.log(noteToAdd)
     switch (noteType) {
         case 'text':
             notes.push(_createTextNote(noteType, noteToAdd))
@@ -81,11 +83,9 @@ function onSaveNote(noteType, noteToAdd) {
         case 'todos':
             const noteTodos = noteToAdd.todos.split(',')
             noteToAdd.todos = noteTodos
-            console.log(noteToAdd)
             notes.push(_createTodoNote(noteType, noteToAdd))
             break;
         case 'video':
-            // console.log(noteToAdd)
             let url = new URL(noteToAdd.urlId);
             var params = url.search
             const urlId = params.substring(3, 14)
@@ -95,6 +95,34 @@ function onSaveNote(noteType, noteToAdd) {
     }
     _saveNotesToStorage()
     return Promise.resolve()
+
+}
+
+function onEditNote(noteId, noteType, noteInfo) {
+    switch (noteType) {
+        case 'note-text':
+            _editNote(noteId, noteInfo)
+            break;
+        case 'note-todos':
+            const noteTodos = noteInfo.todos.split(',')
+            noteInfo.todos = noteTodos
+            _editNote(noteId, noteInfo)
+            break;
+        case 'note-image':
+            _editNote(noteId, noteInfo)
+            break;
+        case 'note-video':
+            let url = new URL(noteInfo.urlId);
+            var params = url.search
+            const urlId = params.substring(3, 14)
+            noteInfo.urlId = urlId
+            _editNote(noteId, noteInfo)
+            break;
+
+    }
+    _saveNotesToStorage()
+    return Promise.resolve()
+
 
 }
 
@@ -112,6 +140,16 @@ function _createTextNote(noteType, noteInfo) {
 
 }
 
+function _editNote(noteId, noteInfo) {
+    let noteIdx = notes.findIndex(note => {
+        return note.id === noteId
+    })
+    notes[noteIdx].info = noteInfo
+
+
+}
+
+
 function _createImageNote(noteType, noteInfo) {
     return {
         id: utilService.makeId(),
@@ -123,6 +161,10 @@ function _createImageNote(noteType, noteInfo) {
         }
     }
 }
+function _editImageNote() {
+
+}
+
 
 function _createTodoNote(noteType, noteInfo) {
     return {
@@ -136,6 +178,9 @@ function _createTodoNote(noteType, noteInfo) {
 
     }
 }
+function _editTodoNote() {
+
+}
 
 function _createVideoNote(noteType, noteInfo) {
     return {
@@ -148,6 +193,11 @@ function _createVideoNote(noteType, noteInfo) {
         }
     }
 }
+
+function _editVideoNote() {
+
+}
+
 function deleteNote(noteId) {
     let idx = notes.findIndex(note => {
         return noteId === note.id

@@ -5,12 +5,19 @@ import { AddTextNote } from '../cmps/AddTextNote.jsx'
 import { AddImageNote } from '../cmps/AddImageNote.jsx'
 import { AddTodosNote } from '../cmps/AddTodosNote.jsx'
 import { AddVideoNote } from '../cmps/AddVideoNote.jsx'
+import { EditTextNote } from '../cmps/EditTextNote.jsx'
+import { EditTodosNote } from '../cmps/EditTodosNote.jsx'
+import { EditImageNote } from '../cmps/EditImageNote.jsx'
+import { EditVideoNote } from '../cmps/EditVideoNote.jsx'
 
 export class KeepApp extends React.Component {
     state = {
         notes: [],
         filterBy: '',
-        inputType: 'text'
+        inputType: 'text',
+        editType: 'note-text',
+        isEditMode: false,
+        currNoteId: ''
     }
 
     componentDidMount() {
@@ -45,11 +52,30 @@ export class KeepApp extends React.Component {
             .then(this.loadNotes)
 
     }
+    onEditNote = (ev, noteType, noteInfo) => {
+        ev.preventDefault()
+        const noteId = this.state.currNoteId
+        noteService.onEditNote(noteId, noteType, noteInfo)
+            .then(this.loadNotes)
+        this.setState({ isEditMode: false })
+
+
+    }
+    onChangeEditModeType = (type) => {
+        this.setState({ editType: type })
+
+    }
+    setEditMode = (type, id) => {
+        this.setState(prevState => ({ isEditMode: !prevState.isEditMode }))
+        this.setState({ editType: type })
+        this.setState({ currNoteId: id })
+    }
+
 
 
     render() {
-        const { notes, inputType } = this.state
-        const DynamicCmp = (props) => {
+        const { notes, inputType, isEditMode, editType } = this.state
+        const DynamicAddCmp = (props) => {
             switch (props.type) {
                 case 'text':
                     return <AddTextNote {...props} />
@@ -61,17 +87,31 @@ export class KeepApp extends React.Component {
                     return <AddVideoNote {...props} />
             }
         }
+        const DynamicEditCmp = (props) => {
+            switch (props.type) {
+                case 'note-text':
+                    return <EditTextNote {...props} />
+                case 'note-todos':
+                    return <EditTodosNote {...props} />
+                case 'note-image':
+                    return <EditImageNote {...props} />
+                case 'note-video':
+                    return <EditVideoNote {...props} />
+            }
+
+        }
         return (
             <section className="note-app">
                 <NotesFilter onSetFilter={this.onSetFilter} />
                 <div className="pick-notes">
-                    <DynamicCmp type={inputType} onSaveNote={this.onSaveNote} />
+                    <DynamicAddCmp type={inputType} onSaveNote={this.onSaveNote} />
                     <div className="note-text note-btn" onClick={() => { this.onChangeNoteType('text') }}></div>
                     <div className="note-list note-btn" onClick={() => { this.onChangeNoteType('todos') }}></div>
                     <div className="note-img note-btn" onClick={() => { this.onChangeNoteType('image') }}></div>
                     <div className="note-video note-btn" onClick={() => { this.onChangeNoteType('video') }}></div>
                 </div>
-                <NotesList notes={notes} onDeleteNote={this.onDeleteNote} onSetNoteColor={this.onSetNoteColor} />
+                <NotesList notes={notes} onDeleteNote={this.onDeleteNote} onSetNoteColor={this.onSetNoteColor} setEditMode={this.setEditMode} onChangeEditModeType={this.onChangeEditModeType} />
+                {isEditMode && <DynamicEditCmp type={editType} onEditNote={this.onEditNote} />}
 
             </section>
         )

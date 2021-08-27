@@ -13,7 +13,7 @@ export class VideoNotePreview extends React.Component {
     }
 
     render() {
-        const { note, onDeleteNote, style, onSetNoteColor } = this.props
+        const { note, onDeleteNote, style, onSetNoteColor, setEditMode } = this.props
         const { isColorPalette } = this.state
         return (
             <section className="video-note-preview" style={style}>
@@ -22,6 +22,9 @@ export class VideoNotePreview extends React.Component {
                 <div className="color-palette-icon" onClick={this.onOpenColorPalette}>
                     {isColorPalette && <ColorPalette note={note} onSetNoteColor={onSetNoteColor} />}
                     open color
+                </div>
+                <div className="edit-text-note" onClick={() => { setEditMode(note.type, note.id) }} >
+                    edit
                 </div>
 
             </section>

@@ -17,7 +17,7 @@ export class NotePreview extends React.Component {
     //     note.style = this.state.style
     // }
     render() {
-        const { note, onDeleteNote, onSetNoteColor } = this.props
+        const { note, onDeleteNote, onSetNoteColor, setEditMode,onChangeEditModeType } = this.props
         const { style } = this.state
         const DynamicCmp = (props) => {
             switch (props.note.type) {
@@ -33,7 +33,7 @@ export class NotePreview extends React.Component {
         }
         return (
             <section className="note-preview" >
-                <DynamicCmp note={note} onDeleteNote={onDeleteNote} style={{ backgroundColor: note.style.bgcolor }} onSetNoteColor={onSetNoteColor} />
+                <DynamicCmp note={note} onDeleteNote={onDeleteNote} style={{ backgroundColor: note.style.bgcolor }} onSetNoteColor={onSetNoteColor} setEditMode={setEditMode} onChangeEditModeType={onChangeEditModeType} />
             </section>
         )
     }
