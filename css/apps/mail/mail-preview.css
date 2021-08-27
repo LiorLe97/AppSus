@@ -1,20 +1,59 @@
-.subject-container{
+.subject-container {
     justify-content: space-between;
 }
 
 .toggle-is-read {
     font-family: Solids;
-    background-color:inherit; /* Blue background */
-    border: none; /* Remove borders */
-    color: rgb(44, 44, 44); /* White text */
-    padding: 6px 8px; /* Some padding */
-    font-size: 25px; /* Set a font size */
-    cursor: pointer; /* Mouse pointer on hover */}
+    background-color: inherit;
+    border: none;
+    color: rgb(44, 44, 44);
+    padding: 6px 8px;
+    font-size: 25px;
+    cursor: pointer;
+}
 
-.toggle-is-read.read::before{
+.toggle-is-read.read::before {
     content: '\f2b6';
 }
 
-.toggle-is-read.unread::before{
+.toggle-is-read.unread::before {
     content: '\f0e0';
+}
+
+.mail-preview {
+    max-width: 850px;
+    align-items: center;
+    position: relative;
+    border-bottom: 1px solid black;
+    transition: background-color 0.5s ease-in-out;
+    justify-content: flex-start;
+
+}
+
+.mail-preview:hover {
+    background-color: rgb(206, 206, 206);
+}
+
+.subject-preview {
+    text-transform: capitalize;
+    margin-inline-end: 250px;
+    font-family: Poppins;
+    font-size: 14px;
+ 
+}
+
+.from-preview {
+    font-weight: bold;
+    text-transform: capitalize;
+    margin-inline-end: 90px;
+    font-family: Poppins;
+    font-size: 14px;
+}
+
+.time-read-preview  {
+    font-weight: bold;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    right: 0px;
 }

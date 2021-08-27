@@ -45,7 +45,7 @@ export const emails =
       id: 'e106',
       subject: 'check 1',
       body: 'Hello, this email is to confirm your purchase for realse shuly at 25/8/21 21:00',
-      isRead: false,
+      isRead: true,
       sentAt: 1851133930594,
       to: 'lior@leizer.com'
     },
@@ -53,7 +53,7 @@ export const emails =
       id: 'e107',
       subject: 'check 2',
       body: 'Hello, this email is to confirm your purchase for realse shuly at 25/8/21 21:00',
-      isRead: false,
+      isRead: true,
       sentAt: 1851133930594,
       to: 'lior@leizer.com'
     }
