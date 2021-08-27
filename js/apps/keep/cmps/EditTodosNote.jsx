@@ -22,7 +22,7 @@ export class EditTodosNote extends React.Component {
                 <form className="add-note" onSubmit={() => { onEditNote(event, type, this.state.info) }} >
                     <input className="note-input" type="text" name="title" value={title} onChange={this.handleChange} placeholder="Edit  title" />
                 </form>
-                <form className="add-note" onSubmit={() => { onEditNote(type, this.state.info) }} >
+                <form className="add-note" onSubmit={() => { onEditNote(event, type, this.state.info) }} >
                     <input className="note-input" type="text" name="todos" value={todos} onChange={this.handleChange} placeholder="Enter new list separated by comma" />
                 </form>
             </section>
