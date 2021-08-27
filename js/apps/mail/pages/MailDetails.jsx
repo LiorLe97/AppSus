@@ -25,6 +25,9 @@ export class MailDetails extends React.Component {
         mailService.deleteEmail(emailId)
         this.props.history.push('/emails')
     }
+    onGoBack=()=>{
+        this.props.history.push('/emails')
+    }
     render() {
         const { email } = this.state
 
@@ -36,6 +39,7 @@ export class MailDetails extends React.Component {
                 <p>{email.body}  </p>
                 <span>Recievd At: {mailService.formatEmailTimestamp(email.sentAt)}</span> 
                 <span>{email.to}</span> 
+                <button className="back-btn" onClick={()=>{this.onGoBack()}}>Back</button>
                 <button className="email-dlt" onClick={() => this.onDeleteEmail(email.id)}>Delete</button>
             </section>
         )
