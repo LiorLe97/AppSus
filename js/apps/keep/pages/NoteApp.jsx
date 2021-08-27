@@ -113,7 +113,7 @@ export class KeepApp extends React.Component {
                     </div>
                 </div>
                 <NotesList notes={notes} onDeleteNote={this.onDeleteNote} onSetNoteColor={this.onSetNoteColor} setEditMode={this.setEditMode} onChangeEditModeType={this.onChangeEditModeType} />
-                {isEditMode && <DynamicEditCmp type={editType} onEditNote={this.onEditNote} />}
+                {isEditMode && <DynamicEditCmp type={editType} onEditNote={this.onEditNote} setEditMode={this.setEditMode} />}
 
             </section>
         )

@@ -15,10 +15,10 @@ export class EditImageNote extends React.Component {
     }
     render() {
         const { url, title } = this.state.info
-        const { type, onEditNote } = this.props
+        const { type, onEditNote,setEditMode } = this.props
         return (
-            <section className="flex">
-
+            <section className="flex editing-modal">
+                    <button class="edit-exit-btn" onClick={setEditMode}>x</button>
                 <form className="add-note" onSubmit={() => { onEditNote(event, type, this.state.info) }} >
                     <input className="note-input" name="title" value={title} type="text" placeholder="Edit title" onChange={this.handleChange} />
                 </form>

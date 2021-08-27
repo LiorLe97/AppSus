@@ -15,10 +15,11 @@ export class EditTodosNote extends React.Component {
     }
     render() {
         const { todos, title } = this.state.info
-        const { type, onEditNote } = this.props
+        const { type, onEditNote, setEditMode } = this.props
 
         return (
-            <section className="flex">
+            <section className="flex editing-modal">
+                <button class="edit-exit-btn" onClick={setEditMode}>x</button>
                 <form className="add-note" onSubmit={() => { onEditNote(event, type, this.state.info) }} >
                     <input className="note-input" type="text" name="title" value={title} onChange={this.handleChange} placeholder="Edit  title" />
                 </form>
