@@ -161,9 +161,7 @@ function _createImageNote(noteType, noteInfo) {
         }
     }
 }
-function _editImageNote() {
 
-}
 
 
 function _createTodoNote(noteType, noteInfo) {
@@ -178,9 +176,7 @@ function _createTodoNote(noteType, noteInfo) {
 
     }
 }
-function _editTodoNote() {
 
-}
 
 function _createVideoNote(noteType, noteInfo) {
     return {
@@ -194,9 +190,7 @@ function _createVideoNote(noteType, noteInfo) {
     }
 }
 
-function _editVideoNote() {
 
-}
 
 function deleteNote(noteId) {
     let idx = notes.findIndex(note => {
@@ -217,18 +211,6 @@ function changeColor(noteId, color) {
     _saveNotesToStorage()
     return Promise.resolve()
 }
-
-// function saveColor(noteId, color) {
-//     console.log(color)
-//     let note = notes.find(note => {
-//         return noteId === note.id
-//     })
-//     note.style.backgroundColor = color;
-//     _saveNotesToStorage()
-
-// }
-
-
 
 
 function _saveNotesToStorage() {
