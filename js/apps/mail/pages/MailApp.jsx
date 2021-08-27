@@ -23,6 +23,8 @@ export class MailApp extends React.Component {
       this.setState({ mails: unread })
     })
   }
+
+
   componentWillUnmount() {
     this.removeEventBus()
 
@@ -58,7 +60,7 @@ export class MailApp extends React.Component {
       <section className="mail-app flex">
 
         {!isCompose && <MailsList mails={mails} history={this.props.history} onReadEmail={this.onReadEmail} filterBy={filterBy} onToggleReadEmail={this.onToggleReadEmail} />}
-        <SideBar onSetFilter={this.onSetFilter} openCompose={this.openCompose}  />
+        <SideBar onSetFilter={this.onSetFilter} openCompose={this.openCompose} />
         {isCompose && <AddEmail openCompose={this.openCompose} history={this.props.history} LoadEmails={this.LoadEmails} />}
 
       </section>

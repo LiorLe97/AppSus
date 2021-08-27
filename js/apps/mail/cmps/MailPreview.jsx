@@ -9,13 +9,15 @@ export function MailPreview({ mail, history, onToggleReadEmail }) {
     }
 
     return (
-        <li className="mail-preview flex">
+        <li className="mail-preview flex"  >
+            <div className="flex" onClick={() => { foo() }}>
+                <div className="from-preview">
+                    <span> {mail.to.substring(0, mail.to.indexOf("@"))}</span>
+                </div>
+                <div className="subject-preview">
+                    <h3 >{mail.subject} </h3>
+                </div>
 
-            <div className="from-preview" onClick={() => { foo() }}>
-                <span> {mail.to.substring(0, mail.to.indexOf("@"))}</span>
-            </div>
-            <div className="subject-preview">
-                <h3 >{mail.subject} </h3>
             </div>
             <div className="time-read-preview">
                 <button className={mail.isRead ? "toggle-is-read read" : 'toggle-is-read unread'} onClick={() => { onToggleReadEmail(!mail.isRead, mail.id) }} ></button>
