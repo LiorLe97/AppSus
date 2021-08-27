@@ -38,14 +38,17 @@
     margin-inline-end: 250px;
     font-family: Poppins;
     font-size: 14px;
+    width: 100%;
 }
 
 .from-preview {
+    display: flex;
     font-weight: bold;
     text-transform: capitalize;
     margin-inline-end: 90px;
     font-family: Poppins;
     font-size: 14px;
+    align-items: center;
 }
 
 .time-read-preview {
