@@ -38,7 +38,8 @@
 
 .color-palette {
     position: absolute;
-    background-color: rgb(132, 186, 248);
+    margin-top:20px;
+    background-color: transparent;
     border-radius: 3rem;
 }
 
