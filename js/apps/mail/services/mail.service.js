@@ -11,7 +11,8 @@ export const mailService = {
     deleteEmail,
     composeEmail,
     toggleReadEmail,
-    getUnreadEmails
+    getUnreadEmails,
+    formatTimePreview
 }
 
 const loggedinUser = {
@@ -137,6 +138,14 @@ function formatEmailTimestamp(timeStamp) {
     if (hours < 10) hours = `0${hours}`
     var today = day + "-" + month + "-" + year + " " + hours + ":" + min
     return today
+}
+function formatTimePreview (timeStamp){
+    let time = new Date(timeStamp)
+    var min = time.getMinutes()
+    var hours = time.getHours()
+    if (hours < 10) hours = `0${hours}`
+    var today = hours + ":" + min
+    return today 
 }
 function deleteEmail(emailId) {
     let emailIdx = getEmailIdx(emailId)

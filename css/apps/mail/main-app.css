@@ -1,6 +1,6 @@
 .mail-app {
-    justify-content: space-evenly;
+    justify-content: space-between;
     margin: 0 auto;
-    background-color: #fff;
+    background-color: whitesmoke;
     height: 90vh;
 }
