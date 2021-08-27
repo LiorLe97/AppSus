@@ -15,15 +15,17 @@ export class ImageNotePreview extends React.Component {
         const { isColorPalette } = this.state
         return (
             <section className="image-note-preview" style={style}>
-                <h1>{note.info.title}</h1>
-                <img src={note.info.url} />
-                <button className="delete-btn" onClick={() => { onDeleteNote(note.id) }}>x</button>
-                <div className="color-palette-icon" onClick={this.onOpenColorPalette}>
-                    {isColorPalette && <ColorPalette note={note} onSetNoteColor={onSetNoteColor} />}
-                    open color
+                <div className="image-note-content">
+                    <h1>{note.info.title}</h1>
+                    <img src={note.info.url} />
                 </div>
-                <div className="edit-text-note" onClick={() => { setEditMode(note.type, note.id) }} >
-                    edit
+                <div className="btn-preview-section">
+                    <button className="delete-btn" onClick={() => { onDeleteNote(note.id) }}></button>
+                    <div className="color-palette-icon" onClick={this.onOpenColorPalette}>
+                        {isColorPalette && <ColorPalette note={note} onSetNoteColor={onSetNoteColor} />}
+                    </div>
+                    <button className="edit-note" onClick={() => { setEditMode(note.type, note.id) }} >
+                    </button>
                 </div>
             </section>
         )

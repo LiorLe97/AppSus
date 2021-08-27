@@ -1,16 +1,15 @@
-
-
-.notes-filter{
-  margin-right:10px;
+.notes-filter {
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+  margin-top: 15px;
 }
 
-
-.filter-input{
-    margin-left:10px;
-    text-align:center;
-    margin-bottom:15px;
-    border:none;
-    border-radius:3rem;
-    padding:15px;
-    outline: none;
+.filter-input {
+  text-align: center;
+  margin-bottom: 15px;
+  border: none;
+  border-radius: 3rem;
+  padding: 15px;
+  outline: none;
 }

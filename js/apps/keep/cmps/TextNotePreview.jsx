@@ -20,13 +20,13 @@ export class TextNotePreview extends React.Component {
         return (
             <section className="text-note-preview" style={style}>
                 <h1>{note.info.text}</h1>
-                <button className="delete-btn" onClick={() => { onDeleteNote(note.id) }}>x</button>
-                <div className="color-palette-icon" onClick={this.onOpenColorPalette}>
-                    {isColorPalette && <ColorPalette note={note} onSetNoteColor={onSetNoteColor} />}
-                    open color
-                </div>
-                <div className="edit-text-note" onClick={() => { setEditMode(note.type,note.id) }} >
-                    edit
+                <div className="btn-preview-section">
+                    <button className="delete-btn" onClick={() => { onDeleteNote(note.id) }}></button>
+                    <div className="color-palette-icon" onClick={this.onOpenColorPalette}>
+                        {isColorPalette && <ColorPalette note={note} onSetNoteColor={onSetNoteColor} />}
+                    </div>
+                    <button className="edit-note" onClick={() => { setEditMode(note.type, note.id) }} >
+                    </button>
                 </div>
             </section>
         )

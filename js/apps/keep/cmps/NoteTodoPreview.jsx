@@ -2,7 +2,6 @@ import { utilService } from "../../../services/util.service.js"
 
 
 export class NoteTodoPreview extends React.Component {
-    //todo is in props
     state = {
         isDone: false
     }

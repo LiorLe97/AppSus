@@ -7,7 +7,7 @@ export class NotesFilter extends React.Component {
 
     handleChange = (ev) => {
         const value = ev.target.value;
-        this.setState({ filterBy: value },()=>{this.props.onSetFilter(this.state.filterBy)})
+        this.setState({ filterBy: value }, () => { this.props.onSetFilter(this.state.filterBy) })
 
     }
 
@@ -17,7 +17,6 @@ export class NotesFilter extends React.Component {
         const { onSetFilter } = this.props
         return (
             <form className="notes-filter" onSubmit={() => { onSetFilter(filterBy) }}>
-                <label htmlFor="filterBy">Search for notes</label>
                 <input className="filter-input" type="text" id="filterBy" name="filterBy" value={filterBy} placeholder="Search note" onChange={this.handleChange} />
             </form>
         )
