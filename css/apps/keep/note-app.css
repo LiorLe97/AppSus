@@ -1,5 +1,7 @@
 .note-app {
     text-align: center;
+    background-color: rgb(151, 151, 151);
+    min-height:100vh;
 }
 
 .pick-notes {

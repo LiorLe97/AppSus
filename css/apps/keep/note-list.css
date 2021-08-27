@@ -1,6 +1,8 @@
 .notes-list {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-items: center;
+    text-align: center;
     align-items: center;
     justify-content: center;
 }
