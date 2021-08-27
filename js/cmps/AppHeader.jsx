@@ -22,7 +22,7 @@ componentDidMount(){
         return (
             <section className="app-header">
                 <h1 onClick={() => this.props.history.push('/')}>AppSus</h1>
-                <p>unRead mails: {this.state.emailsCount}</p>
+                <span>{this.state.emailsCount}</span>
                 <nav>
                     <NavLink exact to="/" >Home</NavLink>
                     <NavLink to="/about" >About</NavLink>

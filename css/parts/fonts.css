@@ -10,3 +10,7 @@
     font-family: Poppins;
     src: url('../assests/fonts/Poppins/Poppins-Light.ttf');
 }
+@font-face {
+    font-family: Regular;
+    src: url('../assests/fonts/Awesome/fa-regular-400.ttf');
+}

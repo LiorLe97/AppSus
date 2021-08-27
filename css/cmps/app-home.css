@@ -5,31 +5,51 @@
     justify-content: space-between;
     align-items: center;
 }
+
 .app-header :first-child {
     padding-left: 30px;
 }
+
 .app-header nav {
     padding-right: 30px;
 }
 
-.app-header nav > *:not(:last-child) {
-    padding-right: 20px;
+.app-header nav :nth-child(4) {
+    position: relative;
+}
 
+.app-header span {
+    position: absolute;
+    background-color: rgb(255, 255, 255);
+    color: red;
+    border-radius: 50%;
+    top: 5px;
+    right: 82px;
 }
-.app-header nav > *{
-text-decoration: none;
+
+/* 
+.app-header span::before {
+    color: black;
+    font-family: Regular;
+    content: '\f0f3';
+} */
+.app-header nav>*:not(:last-child) {
+    padding-right: 20px;
 }
+
+.app-header nav>* {
+    text-decoration: none;
+}
+
 .active {
     color: rgb(255, 139, 139);
 }
 
-.app-header h1{
+.app-header h1 {
     cursor: pointer;
 }
 
-
 /* HOME */
-
 
 .home {
     display: flex;

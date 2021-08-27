@@ -27,7 +27,6 @@
     border-bottom: 1px solid black;
     transition: background-color 0.5s ease-in-out;
     justify-content: flex-start;
-
 }
 
 .mail-preview:hover {
@@ -39,7 +38,6 @@
     margin-inline-end: 250px;
     font-family: Poppins;
     font-size: 14px;
- 
 }
 
 .from-preview {
@@ -50,7 +48,7 @@
     font-size: 14px;
 }
 
-.time-read-preview  {
+.time-read-preview {
     font-weight: bold;
     justify-content: center;
     align-items: center;
