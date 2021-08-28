@@ -15,25 +15,25 @@ export function About() {
 
                 <div className="team-card">
                     <img src="../../css/assests/imgs/lior.PNG" className="about-img" />
-                    <div>
+                    <div className="card-info">
                         <h4>Lior leizerovitch</h4>
                         <p>Up and coming programmer striving to learn new techniches and grow in the programming world.</p>
                         <div className="socials">
-                            <a className="linked" href="#"></a>
-                            <a className="git" href="#"></a>
-                            <a className="face" href="#"></a>
+                            <a className="linked" href="https://github.com/LiorLe97"></a>
+                            <a className="git" href="https://www.instagram.com/liorleizerovich/"></a>
+                            <a className="face" href="https://www.facebook.com/lior.lezerovich/"></a>
                         </div>
                     </div>
                 </div>
                 <div className="team-card">
                     <img src="../../css/assests/imgs/tal.jpeg" className="about-img" />
-                    <div>
+                    <div className="card-info">
                         <h4>Tal Ekroni</h4>
                         <p>Just created this meme editor go ahead gibor have fun</p>
                         <div className="socials">
-                            <a className="linked" href="#"></a>
-                            <a className="git" href="#"></a>
-                            <a className="face" href="#"></a>
+                            <a className="linked" href="https://github.com/Tal-Ekroni"></a>
+                            <a className="git" href="https://www.instagram.com/tal_ekroni/"></a>
+                            <a className="face" href="https://www.facebook.com/Ekroni"></a>
                         </div>
                     </div>
                 </div>

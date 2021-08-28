@@ -34,24 +34,65 @@
     margin-bottom: 8px;
 }
 
-.team-card div {
-    width: 230px;
-}
-
 .cards {
     display: flex;
     gap: 200px;
 }
 
-.socials {
+.card-info {
     display: flex;
     align-items: center;
     flex-direction: column;
 }
 
+.socials {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    font-family: Brands;
+}
+
+.socials a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+    width: 40px;
+    background-color: rgb(187, 187, 187);
+    text-decoration: none;
+    transition: .4s;
+    color: white;
+}
+
+.socials a:nth-child(1)::before {
+    content: '\f09b'
+}
+
+.socials a:nth-child(2)::before {
+    content: '\f16d'
+}
+
+.socials a:nth-child(3)::before {
+    content: '\f09a'
+}
+
+.socials a:nth-child(1):hover {
+    background-color: #4267B2;
+}
+
+.socials a:nth-child(2):hover {
+    background: linear-gradient(45deg, #405DE6, #5851DB, #833AB4, #C13584, #E1306C, #FD1D1D);
+}
+
+.socials a:nth-child(3):hover {
+    background-color: #4267B2;
+}
+
 /* .socials a {
     font-family: Brands;
     font-size: 24px;
+    #4267B2
+
     color: #FF7F00;
     text-decoration: none;
 }
