@@ -49,6 +49,9 @@
     background-color: rgb(184 222 240);
     border-bottom: 1px rgb(177, 177, 177) solid;
 }
+.app-header nav>*:active{
+    color:white;
+}
 
 .active {
     background-color: rgb(184 222 240);
