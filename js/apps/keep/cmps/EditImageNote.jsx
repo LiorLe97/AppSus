@@ -18,6 +18,7 @@ export class EditImageNote extends React.Component {
         const { type, onEditNote,setEditMode } = this.props
         return (
             <section className="flex editing-modal">
+                <h1>{`Edit ${type} :`}</h1>
                     <button class="edit-exit-btn" onClick={setEditMode}>x</button>
                 <form className="add-note" onSubmit={() => { onEditNote(event, type, this.state.info) }} >
                     <input className="note-input" name="title" value={title} type="text" placeholder="Edit title" onChange={this.handleChange} />

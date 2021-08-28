@@ -22,7 +22,7 @@ let notes = storageService.loadFromStorage(KEY) || [
             text: "Fullstack Me Baby!"
         },
         style: {
-            bgcolor: '#49a9f8'
+            bgcolor: '#FFADAD'
         }
     },
     {
@@ -34,7 +34,7 @@ let notes = storageService.loadFromStorage(KEY) || [
             title: "Bobi and Me"
         },
         style: {
-            bgcolor: '#fc6f6f'
+            bgcolor: '#FFD6A5'
         }
     },
     {
@@ -47,7 +47,7 @@ let notes = storageService.loadFromStorage(KEY) || [
 
         },
         style: {
-            bgcolor: '#86f7a4'
+            bgcolor: '#FDFFB6'
         }
     },
     {
@@ -58,7 +58,7 @@ let notes = storageService.loadFromStorage(KEY) || [
             urlId: "5-0BwZ1r6H4"
         },
         style: {
-            bgcolor: '#fbfc97'
+            bgcolor: '#CAFFBF'
         }
     }
 ];

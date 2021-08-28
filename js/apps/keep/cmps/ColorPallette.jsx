@@ -1,5 +1,5 @@
 export function ColorPalette({ onSetNoteColor, note }) {
-    const colors = ['#FFAEBC', '#A0E7E5', '#B4F8C8', '#FBE7C6']
+    const colors = ['#FFADAD', '#FFD6A5', '#FDFFB6', '#CAFFBF','#9BF6FF','#A0C4FF']
 
 
 

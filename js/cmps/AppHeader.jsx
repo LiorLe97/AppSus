@@ -24,11 +24,11 @@ componentDidMount(){
                 <h1 onClick={() => this.props.history.push('/')}>AppSus</h1>
                 <span>{this.state.emailsCount===0?'':this.state.emailsCount}</span>
                 <nav>
-                    <NavLink exact to="/" >Home</NavLink>
-                    <NavLink to="/about" >About</NavLink>
-                    <NavLink to="/book" >Books</NavLink>
-                    <NavLink to="/emails" >Emails</NavLink>
-                    <NavLink to="/keep">Notes</NavLink>
+                    <NavLink exact to="/" ></NavLink>
+                    <NavLink to="/about" ></NavLink>
+                    <NavLink to="/book"></NavLink>
+                    <NavLink to="/emails"></NavLink>
+                    <NavLink to="/keep"></NavLink>
                 </nav>
             </section>
         )

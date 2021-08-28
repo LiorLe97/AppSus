@@ -20,6 +20,7 @@ export class EditTextNote extends React.Component {
 
         return (
             <div className="editing-modal fade-in-edit">
+                <h1>{`Edit ${type} :`}</h1>
                 <button class="edit-exit-btn" onClick={setEditMode}>x</button>
                 <form className="edit-text-note" onSubmit={() => {
                     onEditNote(event, type, this.state.info)
