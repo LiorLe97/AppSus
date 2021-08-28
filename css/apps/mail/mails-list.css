@@ -1,12 +1,21 @@
 .mails-list {
     order: 1;
-    margin: 58px 0 0 0;
+    /* margin: 58px 0 0 0; */
     overflow-y: auto;
     max-height: 80vh;
 }
 
+.mails-list ul {
+    margin: 0;
+}
+
 .mails-list li {
-    min-width: 800px
+    min-width: 800px;
+    height: 50px;
+}
+
+.mails-list h3 {
+    margin: 0;
 }
 
 .mail-list-holder {

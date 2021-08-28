@@ -1,8 +1,6 @@
 .side-bar {
     flex-direction: column;
-    position: relative;
-    top: 9rem;
-    height: 10vh;
+    height: 50px;
 }
 
 .search-email-lbl {
@@ -58,7 +56,6 @@
 .compose-btn {
     padding: 1rem !important;
     align-self: center !important;
-
     background-position: center;
     background-repeat: no-repeat;
     background-size: 32px;
