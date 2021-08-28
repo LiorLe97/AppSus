@@ -21,6 +21,7 @@
 }
 
 .mail-preview {
+    /* width: 800px; */
     max-width: 850px;
     align-items: center;
     position: relative;

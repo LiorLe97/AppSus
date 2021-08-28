@@ -36,7 +36,6 @@ function _createEmail(email) {
 }
 function query(filterBy) {
     const { status, txt, isRead } = filterBy
-    console.log('query', isRead);
     if (isRead === 'all') {
         switch (status) {
             case 'inbox':

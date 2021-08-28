@@ -15,7 +15,7 @@ export const emails =
       isRead: true,
       sentAt: 1251132930594,
       to: 'tal@ekroni.com'
-    },
+    }, 
     {
       id: 'e103',
       subject: 'Project missions',
