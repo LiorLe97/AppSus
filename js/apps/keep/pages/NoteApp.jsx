@@ -110,10 +110,12 @@ export class KeepApp extends React.Component {
                     <NotesFilter onSetFilter={this.onSetFilter} />
                     <div className="pick-notes">
                         <DynamicAddCmp type={inputType} onSaveNote={this.onSaveNote} />
-                        <div className="note-text note-btn" onClick={() => { this.onChangeNoteType('text') }}></div>
-                        <div className="note-list note-btn" onClick={() => { this.onChangeNoteType('todos') }}></div>
-                        <div className="note-img note-btn" onClick={() => { this.onChangeNoteType('image') }}></div>
-                        <div className="note-video note-btn" onClick={() => { this.onChangeNoteType('video') }}></div>
+                        <div className="note-selection flex">
+                            <div className="note-text note-btn" onClick={() => { this.onChangeNoteType('text') }}></div>
+                            <div className="note-list note-btn" onClick={() => { this.onChangeNoteType('todos') }}></div>
+                            <div className="note-img note-btn" onClick={() => { this.onChangeNoteType('image') }}></div>
+                            <div className="note-video note-btn" onClick={() => { this.onChangeNoteType('video') }}></div>
+                        </div>
                     </div>
                 </div>
                 <NotesList notes={notes} onDeleteNote={this.onDeleteNote} onSetNoteColor={this.onSetNoteColor} setEditMode={this.setEditMode} onChangeEditModeType={this.onChangeEditModeType} onDuplicateNote={this.onDuplicateNote} />
