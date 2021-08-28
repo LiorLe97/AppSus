@@ -37,15 +37,19 @@ export class AddEmail extends React.Component {
         return (
             <form className="add-email" onSubmit={this.onSaveEmail}>
                 <p>New Message</p>
+                <div className="compose-input to">
 
-                <label htmlFor="to">TO</label>
-                <input type="email" ref={this.inputRef} name="to" id="to" value={to} onChange={this.onHandleChange} />
+                    <label htmlFor="to">To</label>
+                    <input type="email" ref={this.inputRef} name="to" id="to" value={to} onChange={this.onHandleChange} />
+                </div>
+                <div className="compose-input">
 
-                <label htmlFor="subject">subject</label>
-                <input type="text" name="subject" id="subject" onChange={this.onHandleChange} />
+                    <label htmlFor="subject">Subject</label>
+                    <input type="text" name="subject" id="subject" onChange={this.onHandleChange} />
+                </div>
 
-                <label htmlFor="body">Content</label>
-                <textarea name="body" id="body" cols="40" rows="7" onChange={this.onHandleChange} ></textarea>
+                    <textarea name="body" id="body" cols="40" rows="7" onChange={this.onHandleChange} ></textarea>
+                
 
                 <button>Send Email</button>
             </form>
