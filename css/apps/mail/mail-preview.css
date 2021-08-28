@@ -35,7 +35,7 @@
 
 .subject-preview {
     text-transform: capitalize;
-    margin-inline-end: 250px;
+    margin-inline-end: 100px;
     font-family: Poppins;
     font-size: 0.64rem;
     /* width: 100%; */
@@ -45,7 +45,7 @@
     display: flex;
     font-weight: bold;
     text-transform: capitalize;
-    margin-inline-end: 90px;
+    margin-inline-end: 20px;
     font-family: Poppins;
     font-size: 14px;
     align-items: center;
