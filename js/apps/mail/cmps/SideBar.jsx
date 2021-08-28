@@ -30,7 +30,10 @@ export class SideBar extends React.Component {
         const { openCompose } = this.props
         return (
             <section className='side-bar flex'>
-                <label className="curr-folder">Folder: {this.props.folder}</label >
+                <div className="curr-folder flex">
+                <label >Folder: </label>
+                <span>{this.props.folder}</span >
+                </div>
                 <label htmlFor="filter-by" >Filter By</label>
 
                 <select name="isRead" id="toggle-read" onChange={this.onHandleInput}>

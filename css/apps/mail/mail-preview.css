@@ -22,11 +22,10 @@
 
 .mail-preview {
     max-width: 850px;
-    max-width: 850px;
     align-items: center;
     /* position: relative; */
     border-bottom: 1px solid black;
-    transition: opacity 0.5s ease-in-out;
+    transition: opacity 0.3s ease-in-out;
     justify-content: space-between;
 }
 

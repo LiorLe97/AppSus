@@ -52,6 +52,15 @@
     margin-bottom: 5px;
     transition: opacity 0.2s;
 }
+.curr-folder label{
+    font-weight: bold;
+}
+.curr-folder span{
+    margin-left: 3px;
+    text-transform: capitalize;
+    font-family: Poppins;
+
+}
 
 .compose-btn {
     padding: 1rem !important;
