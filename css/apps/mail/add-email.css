@@ -1,7 +1,13 @@
-.add-email{
+.add-email {
+    position: fixed;
+    top: 201px;
+    right: 14px;
     display: flex;
     flex-direction: column;
     margin: 0 auto;
     margin-top: 70px;
-    font-family: Regular;
+    font-family: Poppins;
+    font-weight: bold;
+    background-color: rgb(255, 242, 167);
+    width: 600px;
 }

@@ -1,5 +1,5 @@
 import { mailService } from "../services/mail.service.js"
-export function MailPreview({ mail, history, onToggleReadEmail,onToggleStaring }) {
+export function MailPreview({ mail, history, onToggleReadEmail, onToggleStaring }) {
 
     function foo() {
         onToggleReadEmail(true, mail.id)
@@ -15,7 +15,7 @@ export function MailPreview({ mail, history, onToggleReadEmail,onToggleStaring }
                     <span> {mail.to.substring(0, mail.to.indexOf("@"))}</span>
                 </div>
                 <div className="subject-preview">
-                    <h3 >{mail.subject} </h3>
+                    <h3  >{mail.subject} </h3>
                 </div>
 
             </div>
