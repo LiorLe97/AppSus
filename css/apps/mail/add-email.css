@@ -64,6 +64,8 @@
   background-color: inherit;
   margin: -7px 0px 4px 4px;
   font-size: 20px;
+  cursor: pointer;
+
 }
 
 .compose-dlt-btn::before {
@@ -79,6 +81,7 @@
   border-radius: 5%;
   margin: -7px 2px 4px 4px;
   font-size: 15px;
+  cursor: pointer;
 }
 
 .fade-in {

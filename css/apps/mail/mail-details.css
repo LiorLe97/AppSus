@@ -1,13 +1,53 @@
 .email-dlt, .back-btn {
-    font-family: Regular;
-    background-color: inherit;
-    border: none;
-    color: rgb(44, 44, 44);
-    padding: 6px 8px;
     font-size: 25px;
+    font-family: Lato;
+    border: none;
+    outline: none;
+    background-color: #a5c7f5;
+    color: white;
+    border-radius: 5%;
+    margin: -7px 2px 4px 4px;
+    font-size: 15px;
     cursor: pointer;
 }
 
 .email-details {
     align-items: center;
+    font-family: Poppins;
+}
+
+.email-details {
+    padding: 37px 0 0 0;
+    border: 1px solid black;
+}
+
+.details-btns {
+    align-self: flex-start;
+}
+
+.details-content {
+    margin-bottom: 20px;
+}
+
+.details-content .content {
+    border-bottom: 1px solid gray;
+}
+
+.details-content p {
+    margin-top: 6px;
+    padding: 0;
+}
+
+.subject h2 {
+    font-size: 25px;
+    padding: 19px 488px 7px 0;
+}
+
+.details-footer {
+    font-size: 10px;
+    padding: 10px 0 1px 0;
+}
+
+.content {
+    font-size: 15px;
 }

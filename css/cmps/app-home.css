@@ -28,8 +28,8 @@
     position: absolute;
     color: red;
     border-radius: 50%;
-    top: 1px;
-    right: 103px;
+    top: -2px;
+    right: 90px;
     z-index: 2;
 }
 

@@ -20,12 +20,12 @@ export class MailDetails extends React.Component {
                 this.setState({ email })
             })
     }
-    
+
     onDeleteEmail = (emailId) => {
         mailService.deleteEmail(emailId)
         this.props.history.push('/emails')
     }
-    onGoBack=()=>{
+    onGoBack = () => {
         this.props.history.push('/emails')
     }
     render() {
@@ -34,14 +34,27 @@ export class MailDetails extends React.Component {
         if (!email) return <div>loading...</div>
         return (
             <section className="email-details flex column">
-                <h2>Title: {email.subject}</h2>
-                <h4>Email content</h4>
-                <p>{email.body}  </p>
-                <span>Recievd At: {mailService.formatEmailTimestamp(email.sentAt)}</span> 
-                <span>{email.to}</span> 
-                <button className="back-btn" onClick={()=>{this.onGoBack()}}>Back</button>
-                <button className="email-dlt" onClick={() => this.onDeleteEmail(email.id)}>Delete</button>
-            </section>
+
+                <div className="details-btns">
+                    <button className="back-btn" onClick={() => { this.onGoBack() }}>Back</button>
+                    <button className="email-dlt" onClick={() => this.onDeleteEmail(email.id)}>Delete</button>
+                </div>
+                <div className="details-content">
+                    <div className="subject">
+                        <h2>{email.subject}</h2>
+                    </div>
+                    <span className="content">content :</span>
+                    <p>{email.body}  </p>
+                    <div className="details-footer flex column">
+                        <span>
+                            Recievd At: {mailService.formatEmailTimestamp(email.sentAt)}
+                        </span>
+                        <span>
+                            {email.to}
+                        </span>
+                    </div>
+                </div>
+            </section >
         )
     }
 }
