@@ -64,7 +64,7 @@ export class MailApp extends React.Component {
     return (
       <section className="mail-app flex">
 
-         <MailsList mails={mails} onSortBy={this.onSortBy} onToggleStaring={this.onToggleStaring} history={this.props.history} onReadEmail={this.onReadEmail} filterBy={filterBy} onToggleReadEmail={this.onToggleReadEmail} />
+        <MailsList mails={mails} onSortBy={this.onSortBy} onToggleStaring={this.onToggleStaring} history={this.props.history} onReadEmail={this.onReadEmail} filterBy={filterBy} onToggleReadEmail={this.onToggleReadEmail} />
         <SideBar onSetFilter={this.onSetFilter} folder={filterBy.status} openCompose={this.openCompose} />
         {isCompose && <AddEmail openCompose={this.openCompose} history={this.props.history} LoadEmails={this.LoadEmails} isCompose={isCompose} />}
 

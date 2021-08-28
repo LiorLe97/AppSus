@@ -65,6 +65,17 @@ export const emails =
       isStared:false,
       sentAt: 1851133930594,
       to: 'lior@leizer.com'
+    },
+    {
+      id: 'e108',
+      subject: 'Hey, send me the files please!!!',
+      body: 'Hello, this email is to confirm your purchase for realse shuly at 25/8/21 21:00',
+      isRead: true,
+      isStared:false,
+      sentAt: 1851133930594,
+      to: 'lior@leizer.com'
     }
+    ,
+    
 
   ]
