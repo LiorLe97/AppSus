@@ -11,7 +11,7 @@ export class ImageNotePreview extends React.Component {
     }
 
     render() {
-        const { note, onDeleteNote, style, onSetNoteColor, setEditMode } = this.props
+        const { note, onDeleteNote, style, onSetNoteColor, setEditMode,onDuplicateNote } = this.props
         const { isColorPalette } = this.state
         return (
             <section className="image-note-preview" style={style}>
@@ -26,6 +26,7 @@ export class ImageNotePreview extends React.Component {
                     </div>
                     <button className="edit-note" onClick={() => { setEditMode(note.type, note.id) }} >
                     </button>
+                    <button className="duplicate-btn" onClick={() => { onDuplicateNote(note) }}></button>
                 </div>
             </section>
         )

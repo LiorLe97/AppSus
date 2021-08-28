@@ -89,6 +89,19 @@
     content: '\f044'
 }
 
+.duplicate-btn {
+    font-family: Solids;
+    display: flex;
+    border: none;
+    outline: none;
+    background-color: inherit;
+    cursor: pointer;
+}
+
+.duplicate-btn::before {
+    content: '\f0c5'
+}
+
 .todos-note-preview {
     padding: 15px;
     padding: 15px;
