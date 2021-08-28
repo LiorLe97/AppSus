@@ -27,7 +27,6 @@ export class SideBar extends React.Component {
     }
 
     render() {
-        const { txt } = this.state.filterBy
         const { openCompose } = this.props
         return (
             <section className='side-bar flex'>
