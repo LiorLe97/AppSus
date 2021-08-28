@@ -11,6 +11,9 @@
     justify-content: center;
     gap: 10px;
 }
+.note-selection{
+    justify-content: center;
+}
 
 .note-btn {
     display: flex;
@@ -54,4 +57,10 @@
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
+}
+
+@media (max-width:820px){
+    .pick-notes{
+        flex-direction: column;
+    }
 }

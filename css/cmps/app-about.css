@@ -1,9 +1,9 @@
 .about {
     display: flex;
-    justify-content: center;
     align-items: center;
     flex-direction: column;
     gap: 30px;
+    height: 110vh;
     font-family: Poppins;
 }
 
@@ -18,7 +18,7 @@
 
 .team-card {
     height: 160px;
-    display:flex;
+    display: flex;
 }
 
 .about-img {
@@ -40,11 +40,14 @@
 
 .cards {
     display: flex;
-    flex-direction: row;
-    gap:200px;
+    gap: 200px;
 }
 
-
+.socials {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
 
 /* .socials a {
     font-family: Brands;
@@ -61,3 +64,14 @@
 .socials .face::before {
     content: '\f082';
 } */
+
+@media(max-width:820px) {
+    .cards {
+        flex-direction: column;
+        gap: 254px;
+    }
+    .team-card {
+        flex-direction: column;
+        align-items: center;
+    }
+}
