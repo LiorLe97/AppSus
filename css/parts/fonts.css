@@ -22,3 +22,7 @@
     font-family: Lato;
     src: url('../assests/fonts/Lato/Lato-Regular.ttf');
 }
+@font-face {
+    font-family: Aquire;
+    src: url('../assests/fonts/Aquire/AquireLight-YzE0o.otf');
+}
