@@ -9,6 +9,10 @@ export class AddEmail extends React.Component {
 
         }
     }
+    inputRef = React.createRef()
+    componentDidMount() {
+        this.inputRef.current.focus()
+    }
     onHandleChange = ({ target }) => {
         let field = target.name
         let value = target.value
@@ -33,7 +37,7 @@ export class AddEmail extends React.Component {
             <form className="add-email" onSubmit={this.onSaveEmail}>
 
                 <label htmlFor="to">TO</label>
-                <input type="email" name="to" id="to" value={to} onChange={this.onHandleChange} />
+                <input type="email" ref={this.inputRef} name="to" id="to" value={to} onChange={this.onHandleChange} />
 
                 <label htmlFor="subject">subject</label>
                 <input type="text" name="subject" id="subject" onChange={this.onHandleChange} />

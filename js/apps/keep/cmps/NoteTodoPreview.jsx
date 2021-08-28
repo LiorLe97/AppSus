@@ -14,8 +14,8 @@ export class NoteTodoPreview extends React.Component {
 
         return (
             <section className="todo-preview">
-                <li className={isDone && "done"} onClick={this.onFinishTodo}>{todo}</li>
-                <div>{isDone && `- Done At: ${utilService.formatedTimestamp(Date.now())}`}</div>
+                <li className={isDone?"done":''} onClick={this.onFinishTodo}>{todo}</li>
+                {/* {isDone && <span>- Done At: ${utilService.formatedTimestamp(Date.now())}`</span>} */}
             </section>
         )
     }

@@ -5,7 +5,7 @@ export const emails =
       subject: 'New products arrived, Come look',
       body: 'Hello, Our new line of products just arrived and we think it will be a perfect match for you. You can find them in our stores and website. Have fun ',
       isRead: false,
-      isStared:false,
+      isStared:true,
       sentAt: 1551133930595,
       to: 'tal@ekroni.com'
     },
@@ -32,7 +32,7 @@ export const emails =
       subject: 'Hotel vitma!',
       body: 'Hello, we will be glad to get a review for your staying at our hotel. Hope you had a great time',
       isRead: true,
-      isStared:false,
+      isStared:true,
       sentAt: 1551133930594,
       to: 'tal@ekroni.com'
     },
@@ -46,12 +46,13 @@ export const emails =
       to: 'tal@ekroni.com'
     }
     ,
+    
     {
       id: 'e106',
       subject: 'check 1',
       body: 'Hello, this email is to confirm your purchase for realse shuly at 25/8/21 21:00',
       isRead: true,
-      isStared:false,
+      isStared:true,
       sentAt: 1851133930594,
       to: 'lior@leizer.com'
     },

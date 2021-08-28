@@ -8,7 +8,8 @@ export const noteService = {
     deleteNote,
     changeColor,
     onEditNote,
-    duplicateNote
+    duplicateNote,
+    formatNoteTimestamp
 }
 const KEY = 'notesDB'
 
@@ -216,6 +217,7 @@ function changeColor(noteId, color) {
 function duplicateNote(note) {
     const newId = utilService.makeId();
     note.id = newId
+    console.log(note.id );
     notes.push(note);
     _saveNotesToStorage()
     return Promise.resolve()
@@ -223,4 +225,18 @@ function duplicateNote(note) {
 
 function _saveNotesToStorage() {
     storageService.saveToStorage(KEY, notes)
+}
+
+function formatNoteTimestamp(timeStamp) {
+    let time = new Date(timeStamp)
+    var min = time.getMinutes()
+    var hours = time.getHours()
+    var day = time.getDate();
+    var month = time.getMonth() + 1;
+    var year = time.getFullYear();
+    if (month < 10) month = "0" + month;
+    if (day < 10) day = "0" + day;
+    if (hours < 10) hours = `0${hours}`
+    var today = day + "-" + month + "-" + year + " " + hours + ":" + min
+    return today
 }
