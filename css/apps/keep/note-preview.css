@@ -92,6 +92,8 @@
 .duplicate-btn {
     font-family: Solids;
     display: flex;
+    justify-content: center;
+    align-items: center;
     border: none;
     outline: none;
     background-color: inherit;

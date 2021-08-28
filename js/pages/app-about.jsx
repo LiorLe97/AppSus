@@ -17,7 +17,7 @@ export function About() {
                     <img src="../../css/assests/imgs/lior.PNG" className="about-img" />
                     <div>
                         <h4>Lior leizerovitch</h4>
-                        <p>Just created this meme editor go ahead have fun</p>
+                        <p>Up and coming programmer striving to learn new techniches and grow in the programming world.</p>
                         <div className="socials">
                             <a className="linked" href="#"></a>
                             <a className="git" href="#"></a>
