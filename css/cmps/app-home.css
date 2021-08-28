@@ -142,7 +142,9 @@
     text-decoration: none;
     font-size: 200px;
     color: black;
+    transition: background-color .4s;
 }
+
 
 .home-links>*:nth-child(1):before {
     content: '\f02d';
@@ -190,9 +192,9 @@
     /* .app-header nav.menu-open */
     .app-header {
         flex-direction: column;
-        height:21vh;
+        height: 21vh;
     }
-    .home-links{
+    .home-links {
         flex-direction: column;
     }
 }
