@@ -10,6 +10,7 @@ export class AddEmail extends React.Component {
         }
     }
     inputRef = React.createRef()
+
     componentDidMount() {
         this.inputRef.current.focus()
     }
@@ -35,6 +36,7 @@ export class AddEmail extends React.Component {
         const { to } = this.state
         return (
             <form className="add-email" onSubmit={this.onSaveEmail}>
+                <p>New Message</p>
 
                 <label htmlFor="to">TO</label>
                 <input type="email" ref={this.inputRef} name="to" id="to" value={to} onChange={this.onHandleChange} />

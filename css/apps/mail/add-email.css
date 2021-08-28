@@ -1,6 +1,8 @@
+
 .add-email {
+    background-color: white;
     position: fixed;
-    top: 201px;
+    top: 64px;
     right: 14px;
     display: flex;
     flex-direction: column;
@@ -8,6 +10,10 @@
     margin-top: 70px;
     font-family: Poppins;
     font-weight: bold;
-    background-color: rgb(255, 242, 167);
     width: 600px;
+}
+.add-email p{
+    padding-left: 5px;
+    background-color: rgb(73, 73, 73);
+    color: white;
 }
