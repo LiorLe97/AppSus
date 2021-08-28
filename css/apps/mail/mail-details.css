@@ -11,3 +11,24 @@
 .email-details {
     align-items: center;
 }
+
+.inbox::before{
+    font-family: Solids;
+    content:'\f01c';
+    
+    margin-right: 20px;
+
+}
+
+.stared::before{
+    font-family: Solids;
+    content: '\f005';
+    margin-right: 20px;
+
+}
+
+.sent::before{
+    font-family: Solids;
+    content: '\f064';
+    margin-right: 20px;
+}

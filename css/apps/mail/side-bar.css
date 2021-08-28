@@ -30,6 +30,7 @@
     transition: opacity 0.5s;
     margin-bottom: 5px;
     padding: 0;
+    align-self: flex-start;
 }
 
 .side-bar button:hover {
@@ -56,6 +57,8 @@
 
 .compose-btn {
     padding: 1rem !important;
+    align-self: center !important;
+
     background-position: center;
     background-repeat: no-repeat;
     background-size: 32px;
