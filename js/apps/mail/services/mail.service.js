@@ -12,7 +12,8 @@ export const mailService = {
     composeEmail,
     toggleReadEmail,
     getUnreadEmails,
-    formatTimePreview
+    formatTimePreview,
+    handleEmailStaring
 }
 
 const loggedinUser = {
@@ -30,6 +31,7 @@ function _createEmail(email) {
         subject: email.subject === '' ? 'No Title' : email.subject,
         body: email.body === '' ? 'No content...' : email.body,
         isRead: false,
+        isStared: false,
         sentAt: Date.now(),
         to: email.to
     }
@@ -48,9 +50,14 @@ function query(filterBy) {
                     return email.subject.toLowerCase().includes(txt.toLowerCase()) && email.to !== loggedinUser.email
                 })
                 return Promise.resolve(sentEmailsToShowAll)
+            case 'stared':
+                const staredEmailsToShowAll = gEmails.filter(email => {
+                    return email.isStared
+                })
+                return Promise.resolve(staredEmailsToShowAll)
         }
     }
-    else  {
+    else {
         switch (status) {
             case 'inbox':
                 const inboxEmailsToShowRead = gEmails.filter(email => {
@@ -62,8 +69,13 @@ function query(filterBy) {
                     return email.subject.toLowerCase().includes(txt.toLowerCase()) && email.to !== loggedinUser.email && email.isRead === isRead
                 })
                 return Promise.resolve(sentEmailsToShowRead)
+            case 'stared':
+                const staredEmailsToShowRead = gEmails.filter(email => {
+                    return email.isStared && email.isRead === isRead
+                })
+                return Promise.resolve(staredEmailsToShowRead)
         }
-    } 
+    }
     return Promise.resolve(gEmails)
 }
 
@@ -142,4 +154,8 @@ function getUnreadEmails() {
         return !email.isRead && email.to === loggedinUser.email
     })
     return unread
+}
+function handleEmailStaring(emailIdx, isStar) {
+    gEmails[emailIdx].isStared = isStar
+    saveEmailsToStorage()
 }

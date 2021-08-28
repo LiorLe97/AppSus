@@ -23,6 +23,7 @@
 .mail-preview {
     /* width: 800px; */
     max-width: 850px;
+    max-width: 850px;
     align-items: center;
     position: relative;
     border-bottom: 1px solid black;
@@ -58,4 +59,14 @@
     align-items: center;
     position: absolute;
     right: 0px;
+}
+
+.isStar::before {
+    font-family: Solids;
+    content: '\f005';
+}
+
+.notStar::before {
+    font-family: Regular;
+    content: '\f005';
 }

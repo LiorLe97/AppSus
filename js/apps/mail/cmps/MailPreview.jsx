@@ -1,5 +1,5 @@
 import { mailService } from "../services/mail.service.js"
-export function MailPreview({ mail, history, onToggleReadEmail }) {
+export function MailPreview({ mail, history, onToggleReadEmail,onToggleStaring }) {
 
     function foo() {
         onToggleReadEmail(true, mail.id)
@@ -11,7 +11,7 @@ export function MailPreview({ mail, history, onToggleReadEmail }) {
     return (
         <li className="mail-preview flex"  >
             <div className="flex" onClick={() => { foo() }}>
-                <div className="from-preview">
+                <div className="from-preview ">
                     <span> {mail.to.substring(0, mail.to.indexOf("@"))}</span>
                 </div>
                 <div className="subject-preview">
@@ -20,6 +20,7 @@ export function MailPreview({ mail, history, onToggleReadEmail }) {
 
             </div>
             <div className="time-read-preview">
+                    <span className={mail.isStared ? 'isStar' : 'notStar'} onClick={()=>{onToggleStaring((mail.id),(!mail.isStared))}}></span>
                 <button className={mail.isRead ? "toggle-is-read read" : 'toggle-is-read unread'} onClick={() => { onToggleReadEmail(!mail.isRead, mail.id) }} ></button>
                 <small>{mailService.formatTimePreview(mail.sentAt)}</small>
             </div>
