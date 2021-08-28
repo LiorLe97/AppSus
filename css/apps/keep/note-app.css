@@ -20,12 +20,13 @@
     background-color: inherit;
     cursor: pointer;
     padding: 10px;
-    transition: background-color 0.4s;
+    transition: all 0.4s;
     border-radius: 3rem;
 }
 
 .note-btn:hover {
-    background-color: rgb(206, 206, 206);
+    background: rgb(188, 230, 247);
+    background: radial-gradient(circle, rgba(188, 230, 247, 1) 0%, rgb(255, 255, 255) 100%);
 }
 
 .note-video::before {

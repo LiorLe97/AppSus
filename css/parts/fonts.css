@@ -14,3 +14,7 @@
     font-family: Regular;
     src: url('../assests/fonts/Awesome/fa-regular-400.ttf');
 }
+@font-face {
+    font-family: Aquire;
+    src: url('../assests/fonts/Aquire/AquireLight-YzE0o.otf');
+}
