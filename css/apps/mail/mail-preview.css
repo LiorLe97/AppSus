@@ -8,7 +8,7 @@
     border: none;
     color: rgb(44, 44, 44);
     /* padding: 6px 8px; */
-    font-size: 25px;
+    font-size: 1.562rem;
     cursor: pointer;
 }
 
@@ -37,7 +37,7 @@
     text-transform: capitalize;
     margin-inline-end: 250px;
     font-family: Poppins;
-    font-size: 14px;
+    font-size: 0.64rem;
     /* width: 100%; */
 }
 

@@ -27,12 +27,11 @@ class _AppHeader extends React.Component {
             <section className="app-header">
                 
                 <h1 onClick={() => this.props.history.push('/')}>AppSus</h1>
-                <span>{this.state.emailsCount === 0 ? '' : this.state.emailsCount}</span>
                 <nav className={isMenuOpen ? "menu-open" : ''}>
                     <NavLink exact to="/" ></NavLink>
                     <NavLink to="/about" ></NavLink>
                     <NavLink to="/book"></NavLink>
-                    <NavLink to="/emails"></NavLink>
+                    <NavLink to="/emails"><span className="notification">{this.state.emailsCount === 0 ? '' : this.state.emailsCount}</span></NavLink>
                     <NavLink to="/keep"></NavLink>
                 </nav>
                 <button className="menu-toggle-btn" onClick={this.onOpenMenu}>☰</button>

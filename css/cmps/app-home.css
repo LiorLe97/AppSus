@@ -23,13 +23,14 @@
     position: relative;
 }
 
-.app-header span {
+.app-header .notification {
+    justify-self: start;
     font-family: Lato;
-    position: absolute;
+    /* position: absolute; */
     color: red;
-    border-radius: 50%;
-    top: -2px;
-    right: 90px;
+    font-size: 10px;
+    top: 3px;
+    right: 9px;
     z-index: 2;
 }
 

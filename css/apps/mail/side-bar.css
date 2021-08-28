@@ -14,7 +14,7 @@
     border: none;
     color: rgb(44, 44, 44);
     padding: 6px 8px;
-    font-size: 25px;
+    font-size: 1.625rem;
     cursor: pointer;
 }
 
@@ -23,7 +23,7 @@
     background-color: inherit;
     border: none;
     color: black;
-    font-size: 16px;
+    font-size: 0.90rem;
     cursor: pointer;
     transition: opacity 0.5s;
     margin-bottom: 5px;
