@@ -10,7 +10,7 @@ export class MailApp extends React.Component {
     filterBy: {
       status: 'inbox',
       txt: '',
-      // isRead: 'all',
+      isRead: 'all',
     },
     isCompose: false
   }

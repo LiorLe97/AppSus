@@ -4,7 +4,22 @@
     top: 9rem;
     height: 10vh;
 }
-.search-email-lbl{
+
+.search-email-lbl {
     text-align: center;
     margin-bottom: 0.3rem;
+}
+
+.compose-btn {
+    font-family: Solids;
+    background-color: inherit;
+    border: none;
+    color: rgb(44, 44, 44);
+    padding: 6px 8px;
+    font-size: 25px;
+    cursor: pointer;
+}
+
+.compose-btn::after {
+    content: '\f067';
 }

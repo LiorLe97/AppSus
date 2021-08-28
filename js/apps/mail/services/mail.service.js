@@ -35,66 +35,38 @@ function _createEmail(email) {
     }
 }
 function query(filterBy) {
-    console.log(filterBy);
-    const { status, txt } = filterBy
-    // if (status === 'inbox') {
-    //     const inboxEmailsToShow = gEmails.filter(email => {
-    //         return email.subject.includes(txt) && email.to === loggedinUser.email
-    //     })
-    //     return Promise.resolve(inboxEmailsToShow)
-    // }
-    switch (status) {
-        case 'inbox':
-            const inboxEmailsToShow = gEmails.filter(email => {
-                return  email.subject.toLowerCase().includes(txt.toLowerCase()) &&email.to === loggedinUser.email
-            })
-            return Promise.resolve(inboxEmailsToShow)
-            break;
-        case 'sent':
-            const sentEmailsToShow = gEmails.filter(email => {
-                return  email.subject.toLowerCase().includes(txt.toLowerCase()) &&email.to !== loggedinUser.email
-            })
-            return Promise.resolve(sentEmailsToShow)
-            break;
-
-
+    const { status, txt, isRead } = filterBy
+    console.log('query', isRead);
+    if (isRead === 'all') {
+        switch (status) {
+            case 'inbox':
+                const inboxEmailsToShowAll = gEmails.filter(email => {
+                    return email.subject.toLowerCase().includes(txt.toLowerCase()) && email.to === loggedinUser.email
+                })
+                return Promise.resolve(inboxEmailsToShowAll)
+            case 'sent':
+                const sentEmailsToShowAll = gEmails.filter(email => {
+                    return email.subject.toLowerCase().includes(txt.toLowerCase()) && email.to !== loggedinUser.email
+                })
+                return Promise.resolve(sentEmailsToShowAll)
+        }
     }
-
+    else  {
+        switch (status) {
+            case 'inbox':
+                const inboxEmailsToShowRead = gEmails.filter(email => {
+                    return email.subject.toLowerCase().includes(txt.toLowerCase()) && email.to === loggedinUser.email && email.isRead === isRead
+                })
+                return Promise.resolve(inboxEmailsToShowRead)
+            case 'sent':
+                const sentEmailsToShowRead = gEmails.filter(email => {
+                    return email.subject.toLowerCase().includes(txt.toLowerCase()) && email.to !== loggedinUser.email && email.isRead === isRead
+                })
+                return Promise.resolve(sentEmailsToShowRead)
+        }
+    } 
     return Promise.resolve(gEmails)
 }
-// function query(filterBy) {
-//     if (filterBy) {
-//         let initStatus = filterBy
-//         let { txt, isRead, status } = filterBy
-//         if (status || initStatus) {
-//             if (status === 'inbox' || initStatus === 'inbox') {
-//                 const inboxEmailsToShow = gEmails.filter(email => {
-//                     return email.to === loggedinUser.email
-//                 })
-//                 return Promise.resolve(inboxEmailsToShow)
-//             } else if (status === 'sent' || initStatus === 'sent') {
-//                 const sentEmailsToShow = gEmails.filter(email => {
-//                     return email.to !== loggedinUser.email
-//                 })
-//                 return Promise.resolve(sentEmailsToShow)
-//             }
-//         }
-//         // if (isRead === 'all') {
-//         //     const allEmailsToShow = gEmails.filter(email => {
-//         //         return email.subject.toLowerCase().includes(txt.toLowerCase()) 
-//         //     })
-//         //     return Promise.resolve(allEmailsToShow)
-//         // } else 
-//         // if ((isRead === true || isRead === false || isRead === null )) {
-//         //     const emailsToShow = gEmails.filter(email => {
-//         //         return email.subject.toLowerCase().includes(txt.toLowerCase()) &&
-//         //             email.isRead === isRead 
-//         //     })
-//         //     return Promise.resolve(emailsToShow)
-//         // }
-//     }
-//     return Promise.resolve(gEmails)
-// }
 
 function saveEmailsToStorage() {
     storageService.saveToStorage(KEY, gEmails)
@@ -139,13 +111,13 @@ function formatEmailTimestamp(timeStamp) {
     var today = day + "-" + month + "-" + year + " " + hours + ":" + min
     return today
 }
-function formatTimePreview (timeStamp){
+function formatTimePreview(timeStamp) {
     let time = new Date(timeStamp)
     var min = time.getMinutes()
     var hours = time.getHours()
     if (hours < 10) hours = `0${hours}`
     var today = hours + ":" + min
-    return today 
+    return today
 }
 function deleteEmail(emailId) {
     let emailIdx = getEmailIdx(emailId)

@@ -30,7 +30,7 @@ export class AddEmail extends React.Component {
     render() {
         const { to } = this.state
         return (
-            <form className="AddEmail" onSubmit={this.onSaveEmail}>
+            <form className="add-email" onSubmit={this.onSaveEmail}>
 
                 <label htmlFor="to">TO</label>
                 <input type="email" name="to" id="to" value={to} onChange={this.onHandleChange} />
