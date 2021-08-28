@@ -61,3 +61,21 @@
     background-size: 32px;
     background-image: url(https://www.gstatic.com/images/icons/material/colored_icons/2x/create_32dp.png);
 }
+
+.inbox::before {
+    font-family: Solids;
+    content: '\f01c';
+    margin-right: 20px;
+}
+
+.stared::before {
+    font-family: Solids;
+    content: '\f005';
+    margin-right: 20px;
+}
+
+.sent::before {
+    font-family: Solids;
+    content: '\f064';
+    margin-right: 20px;
+}
