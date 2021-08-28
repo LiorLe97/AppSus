@@ -63,6 +63,7 @@ function query(filterBy) {
                 const inboxEmailsToShowRead = gEmails.filter(email => {
                     return email.subject.toLowerCase().includes(txt.toLowerCase()) && email.to === loggedinUser.email && email.isRead === isRead
                 })
+            
                 return Promise.resolve(inboxEmailsToShowRead)
             case 'sent':
                 const sentEmailsToShowRead = gEmails.filter(email => {
