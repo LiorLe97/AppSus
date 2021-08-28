@@ -1,4 +1,4 @@
-.email-dlt, .back-btn{
+.email-dlt, .back-btn {
     font-family: Regular;
     background-color: inherit;
     border: none;
@@ -7,7 +7,6 @@
     font-size: 25px;
     cursor: pointer;
 }
-
 
 .email-details {
     align-items: center;

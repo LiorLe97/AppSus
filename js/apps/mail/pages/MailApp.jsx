@@ -66,7 +66,7 @@ export class MailApp extends React.Component {
 
          <MailsList mails={mails} onSortBy={this.onSortBy} onToggleStaring={this.onToggleStaring} history={this.props.history} onReadEmail={this.onReadEmail} filterBy={filterBy} onToggleReadEmail={this.onToggleReadEmail} />
         <SideBar onSetFilter={this.onSetFilter} folder={filterBy.status} openCompose={this.openCompose} />
-        {isCompose && <AddEmail openCompose={this.openCompose} history={this.props.history} LoadEmails={this.LoadEmails} />}
+        {isCompose && <AddEmail openCompose={this.openCompose} history={this.props.history} LoadEmails={this.LoadEmails} isCompose={isCompose} />}
 
       </section>
     )

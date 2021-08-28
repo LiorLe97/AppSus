@@ -21,7 +21,6 @@
 }
 
 .mail-preview {
-    /* width: 800px; */
     max-width: 850px;
     max-width: 850px;
     align-items: center;
@@ -32,7 +31,7 @@
 }
 
 .mail-preview:hover {
-    opacity: 0.5;
+    opacity: 0.2;
 }
 
 .subject-preview {

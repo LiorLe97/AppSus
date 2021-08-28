@@ -22,8 +22,7 @@ export class AddEmail extends React.Component {
         })
     }
 
-    onSaveEmail = (ev) => {
-        ev.preventDefault()
+    onSaveEmail = () => {
         mailService.composeEmail(this.state.email)
             .then(() => {
                 this.props.LoadEmails()
@@ -35,24 +34,26 @@ export class AddEmail extends React.Component {
     render() {
         const { to } = this.state
         return (
-            <form className="add-email" onSubmit={this.onSaveEmail}>
+            <article className={this.props.isCompose ? "add-email fade-in" : "add-email fade-out"}>
                 <p>New Message</p>
                 <div className="compose-input to">
 
-                    <label htmlFor="to">To</label>
+                    <label htmlFor="to" className="to-label">To:</label>
                     <input type="email" ref={this.inputRef} name="to" id="to" value={to} onChange={this.onHandleChange} />
                 </div>
                 <div className="compose-input">
 
-                    <label htmlFor="subject">Subject</label>
+                    <label htmlFor="subject" className="subject-label">Subject:</label>
                     <input type="text" name="subject" id="subject" onChange={this.onHandleChange} />
                 </div>
 
-                    <textarea name="body" id="body" cols="40" rows="7" onChange={this.onHandleChange} ></textarea>
-                
+                <textarea name="body" id="body" rows="17" onChange={this.onHandleChange} ></textarea>
+                <div className="compose-edit-btns flex">
 
-                <button>Send Email</button>
-            </form>
+                    <button className="compose-send-btn" onClick={this.onSaveEmail}>Send</button>
+                    <button className="compose-dlt-btn" onClick={this.props.openCompose}></button>
+                </div>
+            </article>
         )
     }
 }

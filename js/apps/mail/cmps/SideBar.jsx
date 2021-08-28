@@ -30,7 +30,7 @@ export class SideBar extends React.Component {
         const { openCompose } = this.props
         return (
             <section className='side-bar flex'>
-                <span>Folder: {this.props.folder}</span>
+                <label className="curr-folder">Folder: {this.props.folder}</label >
                 <label htmlFor="filter-by" >Filter By</label>
 
                 <select name="isRead" id="toggle-read" onChange={this.onHandleInput}>
@@ -41,9 +41,9 @@ export class SideBar extends React.Component {
                 <label htmlFor="txt" className="search-email-lbl">Search</label>
                 <input type="text" name="txt" onChange={this.onHandleInput} />
 
-                <button onClick={() => this.onHandleChange('inbox', 'status')}>Inbox</button>
-                <button onClick={() => this.onHandleChange('stared', 'status')}>Stared</button>
-                <button onClick={() => this.onHandleChange('sent', 'status')}>Sent</button>
+                <button className="inbox" onClick={() => this.onHandleChange('inbox', 'status')}>Inbox</button>
+                <button className="stared" onClick={() => this.onHandleChange('stared', 'status')}>Stared</button>
+                <button className="sent" onClick={() => this.onHandleChange('sent', 'status')}>Sent</button>
                 <button className="compose-btn" onClick={openCompose}></button>
             </section>
         )

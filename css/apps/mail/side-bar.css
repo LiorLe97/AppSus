@@ -20,6 +20,44 @@
     cursor: pointer;
 }
 
-.compose-btn::after {
-    content: '\f067';
+.side-bar button {
+    font-family: Poppins;
+    background-color: inherit;
+    border: none;
+    color: black;
+    font-size: 16px;
+    cursor: pointer;
+    transition: opacity 0.5s;
+    margin-bottom: 5px;
+    padding: 0;
+}
+
+.side-bar button:hover {
+    opacity: 0.2;
+}
+
+.side-bar input, select {
+    font-family: Poppins;
+    outline: none;
+    border-radius: 5px;
+    border: 1px solid black;
+}
+
+.side-bar label {
+    font-family: Poppins;
+    text-align: center;
+}
+
+.curr-folder {
+    border-bottom: 1px solid rgb(160, 160, 160);
+    margin-bottom: 5px;
+    transition: opacity 0.2s;
+}
+
+.compose-btn {
+    padding: 1rem !important;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 32px;
+    background-image: url(https://www.gstatic.com/images/icons/material/colored_icons/2x/create_32dp.png);
 }
