@@ -4,14 +4,14 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    border-bottom: 1px rgb(177, 177, 177) solid;
 }
 
-.app-header :first-child {
-    padding-left: 30px;
-}
+
 
 .app-header nav {
-    padding-right: 30px;
+    display: flex;
+
 }
 
 .app-header nav :nth-child(4) {
@@ -33,12 +33,24 @@
     font-family: Regular;
     content: '\f0f3';
 } */
-.app-header nav>*:not(:last-child) {
-    padding-right: 20px;
+
+.app-header nav>*:last-child {
+    margin-right:15px;
 }
 
 .app-header nav>* {
+    display: flex;
     text-decoration: none;
+    height:10vh;
+    justify-content: center;
+    align-items: center;
+    padding:20px;
+    transition:background-color .4s;
+}
+
+.app-header nav>*:hover {
+    background-color: rgb(184 222 240);
+    border-bottom: 1px rgb(177, 177, 177) solid;
 }
 
 .active {

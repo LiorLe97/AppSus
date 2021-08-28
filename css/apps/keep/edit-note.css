@@ -11,18 +11,72 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    opacity: .9
+    border-radius: 5%;
 }
 
-.edit-exit-btn{
-    align-self:flex-end;
+.edit-exit-btn {
+    align-self: flex-end;
     justify-self: flex-start;
-    position:relative;
-    top:-130px;
-    color:white;
-    border:none;
-    outline:none;
+    position: relative;
+    top: -130px;
+    color: white;
+    border: none;
+    outline: none;
     background-color: transparent;
-    font-size:2rem;
-    cursor:pointer;
+    font-size: 2rem;
+    cursor: pointer;
 }
+
+.fade-in-edit {
+    animation: fadeIn 1s;
+    -webkit-animation: fadeIn 1s;
+    -moz-animation: fadeIn 1s;
+    -o-animation: fadeIn 1s;
+    -ms-animation: fadeIn 1s;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@-moz-keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@-webkit-keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@-o-keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@-ms-keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+

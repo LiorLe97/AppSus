@@ -1,7 +1,9 @@
 .note-app {
     text-align: center;
-    background-color: rgb(151, 151, 151);
-    min-height:100vh;
+    background: rgb(2, 0, 36);
+    background: linear-gradient(0deg, rgba(2, 0, 36, 1) 0%, rgba(221, 221, 221, 1) 0%, rgba(188, 230, 247, 1) 100%);
+    min-height: 100vh;
+    font-family: Poppins;
 }
 
 .pick-notes {
@@ -18,6 +20,12 @@
     background-color: inherit;
     cursor: pointer;
     padding: 10px;
+    transition: background-color 0.4s;
+    border-radius: 3rem;
+}
+
+.note-btn:hover {
+    background-color: rgb(206, 206, 206);
 }
 
 .note-video::before {
