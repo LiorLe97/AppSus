@@ -13,7 +13,7 @@ export class VideoNotePreview extends React.Component {
     }
 
     render() {
-        const { note, onDeleteNote, style, onSetNoteColor, setEditMode } = this.props
+        const { note, onDeleteNote, style, onSetNoteColor, setEditMode, onDuplicateNote } = this.props
         const { isColorPalette } = this.state
         return (
             <section className="video-note-preview" style={style}>
@@ -24,6 +24,7 @@ export class VideoNotePreview extends React.Component {
                         {isColorPalette && <ColorPalette note={note} onSetNoteColor={onSetNoteColor} />}
                     </div>
                     <button className="edit-note" onClick={() => { setEditMode(note.type, note.id) }} ></button>
+                    <button className="duplicate-btn" onClick={() => { onDuplicateNote(note) }}></button>
                 </div>
 
             </section>

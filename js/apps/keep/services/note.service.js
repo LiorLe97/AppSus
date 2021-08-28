@@ -7,7 +7,8 @@ export const noteService = {
     onSaveNote,
     deleteNote,
     changeColor,
-    onEditNote
+    onEditNote,
+    duplicateNote
 }
 const KEY = 'notesDB'
 
@@ -212,6 +213,13 @@ function changeColor(noteId, color) {
     return Promise.resolve()
 }
 
+function duplicateNote(note) {
+    const newId = utilService.makeId();
+    note.id = newId
+    notes.push(note);
+    _saveNotesToStorage()
+    return Promise.resolve()
+}
 
 function _saveNotesToStorage() {
     storageService.saveToStorage(KEY, notes)

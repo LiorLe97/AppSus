@@ -14,7 +14,7 @@ export class TodosNotePreview extends React.Component {
 
     //note is in props
     render() {
-        const { note, onDeleteNote, style, onSetNoteColor, setEditMode, onChangeEditModeType } = this.props
+        const { note, onDeleteNote, style, onSetNoteColor, setEditMode, onDuplicateNote } = this.props
         const { isColorPalette } = this.state
 
         return (
@@ -32,6 +32,7 @@ export class TodosNotePreview extends React.Component {
                     </div>
                     <div className="edit-note" onClick={() => { setEditMode(note.type, note.id) }} >
                     </div>
+                    <button className="duplicate-btn" onClick={() => { onDuplicateNote(note) }}></button>
                 </div>
 
             </section>

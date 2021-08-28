@@ -15,8 +15,8 @@ export class TextNotePreview extends React.Component {
         this.setState(prevState => ({ isEditMode: !prevState.isEditMode }))
     }
     render() {
-        const { note, onDeleteNote, style, onSetNoteColor, setEditMode, onChangeEditModeType } = this.props
-        const { isColorPalette, isEditMode } = this.state
+        const { note, onDeleteNote, style, onSetNoteColor, setEditMode, onDuplicateNote } = this.props
+        const { isColorPalette } = this.state
         return (
             <section className="text-note-preview" style={style}>
                 <h1>{note.info.text}</h1>
@@ -27,6 +27,7 @@ export class TextNotePreview extends React.Component {
                     </div>
                     <button className="edit-note" onClick={() => { setEditMode(note.type, note.id) }} >
                     </button>
+                    <button className="duplicate-btn" onClick={() => { onDuplicateNote(note) }}></button>
                 </div>
             </section>
         )

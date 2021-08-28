@@ -70,6 +70,10 @@ export class KeepApp extends React.Component {
         this.setState({ editType: type })
         this.setState({ currNoteId: id })
     }
+    onDuplicateNote = (note) => {
+        noteService.duplicateNote(note)
+            .then(this.loadNotes)
+    }
 
 
 
@@ -112,7 +116,7 @@ export class KeepApp extends React.Component {
                         <div className="note-video note-btn" onClick={() => { this.onChangeNoteType('video') }}></div>
                     </div>
                 </div>
-                <NotesList notes={notes} onDeleteNote={this.onDeleteNote} onSetNoteColor={this.onSetNoteColor} setEditMode={this.setEditMode} onChangeEditModeType={this.onChangeEditModeType} />
+                <NotesList notes={notes} onDeleteNote={this.onDeleteNote} onSetNoteColor={this.onSetNoteColor} setEditMode={this.setEditMode} onChangeEditModeType={this.onChangeEditModeType} onDuplicateNote={this.onDuplicateNote} />
                 {isEditMode && <DynamicEditCmp type={editType} onEditNote={this.onEditNote} setEditMode={this.setEditMode} />}
 
             </section>
