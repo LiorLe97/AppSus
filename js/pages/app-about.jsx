@@ -14,7 +14,7 @@ export function About() {
             <div className="cards">
 
                 <div className="team-card">
-                    <img src="././css/assests/imgs/lior.PNG" className="about-img" />
+                    <img src="css/assests/imgs/lior.PNG" className="about-img" />
                     <div className="card-info">
                         <h4>Lior leizerovitch</h4>
                         <p>Up and coming programmer striving to learn new techniches and grow in the programming world.</p>
@@ -26,7 +26,7 @@ export function About() {
                     </div>
                 </div>
                 <div className="team-card">
-                    <img src="././css/assests/imgs/tal.jpeg" className="about-img" />
+                    <img src="css/assests/imgs/tal.jpeg" className="about-img" />
                     <div className="card-info">
                         <h4>Tal Ekroni</h4>
                         <p>Im 24 years old, New fullstack developer whos allways excited for new technologies! </p>
