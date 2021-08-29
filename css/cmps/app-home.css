@@ -192,7 +192,7 @@
     /* .app-header nav.menu-open */
     .app-header {
         flex-direction: column;
-        height: 21vh;
+        height: 25vh;
     }
     .home-links {
         flex-direction: column;
